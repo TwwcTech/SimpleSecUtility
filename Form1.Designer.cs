@@ -28,13 +28,43 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            PassPinButton = new Button();
+            FileEnDecButton = new Button();
             SuspendLayout();
+            // 
+            // PassPinButton
+            // 
+            PassPinButton.FlatAppearance.BorderSize = 0;
+            PassPinButton.FlatStyle = FlatStyle.Flat;
+            PassPinButton.Font = new Font("Century Gothic", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            PassPinButton.Image = (Image)resources.GetObject("PassPinButton.Image");
+            PassPinButton.Location = new Point(12, 109);
+            PassPinButton.Name = "PassPinButton";
+            PassPinButton.Size = new Size(327, 259);
+            PassPinButton.TabIndex = 0;
+            PassPinButton.TextAlign = ContentAlignment.BottomCenter;
+            PassPinButton.UseVisualStyleBackColor = true;
+            // 
+            // FileEnDecButton
+            // 
+            FileEnDecButton.FlatAppearance.BorderSize = 0;
+            FileEnDecButton.FlatStyle = FlatStyle.Flat;
+            FileEnDecButton.Image = (Image)resources.GetObject("FileEnDecButton.Image");
+            FileEnDecButton.Location = new Point(370, 110);
+            FileEnDecButton.Name = "FileEnDecButton";
+            FileEnDecButton.Size = new Size(327, 259);
+            FileEnDecButton.TabIndex = 1;
+            FileEnDecButton.TextAlign = ContentAlignment.BottomCenter;
+            FileEnDecButton.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(709, 476);
+            Controls.Add(FileEnDecButton);
+            Controls.Add(PassPinButton);
             FormBorderStyle = FormBorderStyle.Fixed3D;
             MaximizeBox = false;
             MinimizeBox = false;
@@ -46,5 +76,8 @@
         }
 
         #endregion
+
+        private Button PassPinButton;
+        private Button FileEnDecButton;
     }
 }
