@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             PassPinButton = new Button();
             FileEnDecButton = new Button();
+            toolTip = new ToolTip(components);
             SuspendLayout();
             // 
             // PassPinButton
@@ -58,6 +60,11 @@
             FileEnDecButton.TextAlign = ContentAlignment.BottomCenter;
             FileEnDecButton.UseVisualStyleBackColor = true;
             // 
+            // toolTip
+            // 
+            toolTip.AutomaticDelay = 150;
+            toolTip.IsBalloon = true;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -79,5 +86,6 @@
 
         private Button PassPinButton;
         private Button FileEnDecButton;
+        private ToolTip toolTip;
     }
 }
