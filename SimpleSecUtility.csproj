@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="AppResources\AppIcons\" />
     <Folder Include="Frontend\" />
   </ItemGroup>
 
