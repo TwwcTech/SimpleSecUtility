@@ -15,13 +15,13 @@ namespace SimpleSecUtility
             bool setupStatus = SetupManager.HasAppBeenSetup();
             if (setupStatus is false)
             {
-                DialogResult continueSetupResult = MessageBox.Show("Simple Sec Utility has never been run. Would you like to continue with seutp?", "Setup Check", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
-                if (continueSetupResult == DialogResult.Yes)
+                DialogResult dialogResult = MessageBox.Show("Simple Sec Utility has never been run. Would you like to continue with seutp?", "Setup Check", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+                if (dialogResult == DialogResult.Yes)
                 {
                     Form setupForm = new SetupForm();
                     setupForm.ShowDialog();
                 }
-                else if (continueSetupResult == DialogResult.No)
+                else if (dialogResult == DialogResult.No)
                 {
                     Close();
                     Dispose();
