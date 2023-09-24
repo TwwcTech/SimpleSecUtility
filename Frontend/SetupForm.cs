@@ -21,7 +21,7 @@ namespace SimpleSecUtility.Frontend
 
             SetupFormTooltip = new ToolTip();
             SetupFormTooltip.SetToolTip(SetupInfoPanel, "Setup Information");
-            SetupFormTooltip.SetToolTip(MasterPasswordTextbox, Statics.PasswordRequirementsInfo);
+            SetupFormTooltip.SetToolTip(SetupControlsPanel, Statics.PasswordRequirementsInfo);
             SetupFormTooltip.SetToolTip(MasterPassSubmitButton, "Click to submit the master password entry");
         }
 
