@@ -22,9 +22,13 @@ namespace SimpleSecUtility.Backend.SecureGenerator
                         }
                         break;
                     case "pin":
-                        if (requestLength >= _defaultPINLength)
+                        if (requestLength == _defaultPINLength)
                         {
                             apiUrl = $"https://www.random.org/strings/?num=1&len={requestLength}&digits=on&format=plain&rnd=new";
+                        }
+                        else if (requestLength > _defaultPINLength)
+                        {
+                            apiUrl = $"https://www.random.org/strings/?num=1&len={requestLength}&digits=on&unique=on&format=plain&rnd=new";
                         }
                         break;
                     default:
