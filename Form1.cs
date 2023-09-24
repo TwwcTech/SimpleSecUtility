@@ -34,5 +34,15 @@ namespace SimpleSecUtility
             toolTip.SetToolTip(PassPinButton, "Generate a Secure Password or PIN");
             toolTip.SetToolTip(FileEnDecButton, "Encrypt or Decrypt a File");
         }
+
+        private void PassPinButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FileEnDecButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
