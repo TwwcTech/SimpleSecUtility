@@ -5,59 +5,43 @@
         private const int _defaultPasswordLength = 8;
         private const int _defaultPINLength = 4;
 
-        public static async Task<string> ReturnSecurePassword(int passwordLength = _defaultPasswordLength)
+        public static async Task<string> ReturnSecurePasswordOrPIN(string requestType, int requestLength)
         {
             using (HttpClient passwordClient = new HttpClient())
             {
-                string passwordResult = string.Empty;
+                string requestResult = string.Empty;
+                string apiUrl = string.Empty;
 
-                if (passwordLength >= _defaultPasswordLength)
+                switch (requestType.ToLower())
                 {
-                    string passwordApiUrl = $"https://www.random.org/strings/?num=1&len={passwordLength}&digits=on&upperalpha=on&loweralpha=on&unique=on&format=plain&rnd=new";
-                    try
-                    {
-                        passwordClient.DefaultRequestHeaders.Add("X-RandomOrg-ApiKey", ""); // Complete the API Key
-                        HttpResponseMessage response = await passwordClient.GetAsync(passwordApiUrl);
-                        if (response.IsSuccessStatusCode)
+                    case "password":
+                        if (requestLength >= _defaultPasswordLength)
                         {
-                            passwordResult = await response.Content.ReadAsStringAsync();
+                            apiUrl = $"https://www.random.org/strings/?num=1&len={requestLength}&digits=on&upperalpha=on&loweralpha=on&unique=on&format=plain&rnd=new";
                         }
-                        else
+                        break;
+                    case "pin":
+                        if (requestLength >= _defaultPINLength)
                         {
-                            MessageBox.Show($"Unable to connect. Status Code: {response.StatusCode}");
+                            apiUrl = $"https://www.random.org/strings/?num=1&len={requestLength}&digits=on&format=plain&rnd=new";
                         }
-                    }
-                    catch (Exception ex) { ex.ToString(); }
+                        break;
                 }
-                return passwordResult.Trim();
-            }
-        }
-
-        public static async Task<string> ReturnSecurePIN(int pinLength = _defaultPINLength)
-        {
-            using (HttpClient pinClient = new HttpClient())
-            {
-                string pinResult = string.Empty;
-
-                if (pinLength >= _defaultPINLength)
+                try
                 {
-                    string pinApiUrl = $"https://www.random.org/strings/?num=1&len={pinLength}&digits=on&format=plain&rnd=new";
-                    try
+                    passwordClient.DefaultRequestHeaders.Add("X-RandomOrg-ApiKey", ""); // Complete the API Key
+                    HttpResponseMessage response = await passwordClient.GetAsync(apiUrl);
+                    if (response.IsSuccessStatusCode)
                     {
-                        pinClient.DefaultRequestHeaders.Add("X-RandomOrg-ApiKey", ""); // Complete the API Key string
-                        HttpResponseMessage pinResponse = await pinClient.GetAsync(pinApiUrl);
-                        if (pinResponse.IsSuccessStatusCode)
-                        {
-                            pinResult = await pinResponse.Content.ReadAsStringAsync();
-                        }
-                        else
-                        {
-                            MessageBox.Show($"Unable to connect. Status Code: {pinResponse.StatusCode}");
-                        }
+                        requestResult = await response.Content.ReadAsStringAsync();
                     }
-                    catch (Exception ex) { ex.ToString(); }
+                    else
+                    {
+                        MessageBox.Show($"Unable to connect. Status Code: {response.StatusCode}");
+                    }
                 }
-                return pinResult.Trim();
+                catch (Exception ex) { ex.ToString(); }
+                return requestResult.Trim();
             }
         }
     }
