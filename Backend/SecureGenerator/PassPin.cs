@@ -1,4 +1,6 @@
-﻿namespace SimpleSecUtility.Backend.SecureGenerator
+﻿using SimpleSecUtility.Backend.AppRegistry;
+
+namespace SimpleSecUtility.Backend.SecureGenerator
 {
     internal class PassPin
     {
@@ -10,7 +12,6 @@
             using (HttpClient passwordClient = new HttpClient())
             {
                 string apiUrl = string.Empty;
-                string requestResult = string.Empty;
 
                 switch (requestType.ToLower().Trim())
                 {
@@ -27,21 +28,33 @@
                         }
                         break;
                 }
-                try
-                {
-                    passwordClient.DefaultRequestHeaders.Add("X-RandomOrg-ApiKey", ""); // Complete the API Key
-                    HttpResponseMessage response = await passwordClient.GetAsync(apiUrl);
 
-                    if (response.IsSuccessStatusCode)
+                string apiKey = RegistryReader.ReadApiKey("apikey");
+                string requestResult = string.Empty;
+
+                if (!string.IsNullOrEmpty(apiKey))
+                {
+
+                    try
                     {
-                        requestResult = await response.Content.ReadAsStringAsync();
+                        passwordClient.DefaultRequestHeaders.Add("X-RandomOrg-ApiKey", apiKey);
+                        HttpResponseMessage response = await passwordClient.GetAsync(apiUrl);
+
+                        if (response.IsSuccessStatusCode)
+                        {
+                            requestResult = await response.Content.ReadAsStringAsync();
+                        }
+                        else
+                        {
+                            MessageBox.Show($"Unable to connect to Random.Org, Status Code: {response.StatusCode}", "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
-                    else
-                    {
-                        MessageBox.Show($"Unable to connect. Status Code: {response.StatusCode}");
-                    }
+                    catch (Exception ex) { ex.ToString(); }
                 }
-                catch (Exception ex) { ex.ToString(); }
+                else
+                {
+                    MessageBox.Show("API Key was not found", "API Key Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
                 return requestResult.Trim();
             }
         }
