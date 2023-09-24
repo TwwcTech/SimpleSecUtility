@@ -35,12 +35,12 @@ namespace SimpleSecUtility
 
         private void PassPinButton_Click(object sender, EventArgs e)
         {
-
+            // Code goes here
         }
 
         private void FileEnDecButton_Click(object sender, EventArgs e)
         {
-
+            // Code goes here
         }
     }
 }
