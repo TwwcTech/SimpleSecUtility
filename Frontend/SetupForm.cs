@@ -42,6 +42,7 @@ namespace SimpleSecUtility.Frontend
                     // Testing
                     MessageBox.Show($"Hashed Password:\n{hashedPassword}");
                     //SetupManager.RunSetup(hashedPassword, apiKeyTextbox.Text.Trim());
+                    Close();
                 }
                 else
                 {
