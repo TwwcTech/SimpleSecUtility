@@ -2,6 +2,6 @@
 {
     internal class RegistryReader
     {
-
+        // Code goes here
     }
 }
