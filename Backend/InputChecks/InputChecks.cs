@@ -43,5 +43,27 @@
                 return true;
             }
         }
+
+        public bool AreNumericBoxInputsEmpty(NumericUpDown[] numericboxes)
+        {
+            lock (_instanceLock)
+            {
+                int emptyNumericBoxes = numericboxes.Length;
+
+                foreach(NumericUpDown numericBox in numericboxes)
+                {
+                    if (!string.IsNullOrWhiteSpace(numericBox.Text))
+                    {
+                        emptyNumericBoxes--;
+                    }
+                }
+
+                if (emptyNumericBoxes == 0)
+                {
+                    return false;
+                }
+                return true;
+            }
+        }
     }
 }
