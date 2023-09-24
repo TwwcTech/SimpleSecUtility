@@ -9,8 +9,8 @@
         {
             using (HttpClient passwordClient = new HttpClient())
             {
-                string requestResult = string.Empty;
                 string apiUrl = string.Empty;
+                string requestResult = string.Empty;
 
                 switch (requestType.ToLower().Trim())
                 {
