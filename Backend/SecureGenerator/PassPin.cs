@@ -27,6 +27,8 @@ namespace SimpleSecUtility.Backend.SecureGenerator
                             apiUrl = $"https://www.random.org/strings/?num=1&len={requestLength}&digits=on&format=plain&rnd=new";
                         }
                         break;
+                    default:
+                        throw new ArgumentException("Not an option, please select from: [password, pin]");
                 }
 
                 string apiKey = RegistryReader.ReadApiKey("apikey");
@@ -53,7 +55,7 @@ namespace SimpleSecUtility.Backend.SecureGenerator
                 }
                 else
                 {
-                    MessageBox.Show("API Key was not found", "API Key Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("API Key was not found", "API Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 return requestResult.Trim();
             }
