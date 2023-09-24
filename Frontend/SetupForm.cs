@@ -27,12 +27,16 @@ namespace SimpleSecUtility.Frontend
         private void MasterPassSubmitButton_Click(object sender, EventArgs e)
         {
             TextBox[] setupInputs = new TextBox[] { MasterPasswordTextbox };
-            bool areTextboxInputsEmpty = InputChecks.Instance.AreTextboxInputsEmpty(setupInputs);
+            bool areTextboxInputsEmpty = EmptyChecks.Instance.AreTextboxInputsEmpty(setupInputs);
 
             if (areTextboxInputsEmpty == false)
             {
-                string hashedPassword = Hasher.Hash(MasterPasswordTextbox.Text.Trim());
-                SetupManager.RunSetup(hashedPassword);
+                bool isPasswordSecure = PasswordSecurityCheck.Instance!.IsPasswordSecure(MasterPasswordTextbox.Text.Trim());
+                if (isPasswordSecure)
+                {
+                    string hashedPassword = Hasher.Hash(MasterPasswordTextbox.Text.Trim());
+                    SetupManager.RunSetup(hashedPassword);
+                }
             }
             else
             {
