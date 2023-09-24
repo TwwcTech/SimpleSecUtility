@@ -28,8 +28,8 @@ namespace SimpleSecUtility.Backend.AppSetup
                 if (setupKey != null)
                 {
                     setupKey.SetValue("Setup Date", DateTime.Now.ToString("ddMMyyyy"));
-                    setupKey.SetValue("Version", ""); // Complete the string
-
+                    setupKey.SetValue("Version", Statics.AppVersion);
+                    setupKey.SetValue("Master", Hasher.Hash(masterPassword));
                 }
             }
         }
