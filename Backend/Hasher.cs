@@ -10,7 +10,7 @@ namespace SimpleSecUtility.Backend
             byte[] stringToHashBytes = Encoding.UTF8.GetBytes(stringToHash);
             byte[] hashedString = HashAlgorithm.Create("SHA256").ComputeHash(stringToHashBytes);
 
-            return Convert.ToBase64String(hashedString);
+            return Convert.ToHexString(hashedString);
         }
     }
 }
