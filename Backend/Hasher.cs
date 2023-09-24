@@ -7,10 +7,7 @@ namespace SimpleSecUtility.Backend
     {
         public static string Hash(string stringToHash)
         {
-            byte[] stringToHashBytes = Encoding.UTF8.GetBytes(stringToHash);
-            byte[] hashedString = HashAlgorithm.Create("SHA256").ComputeHash(stringToHashBytes);
-
-            return Convert.ToHexString(hashedString);
+            return Convert.ToHexString(SHA256.HashData(Encoding.UTF8.GetBytes(stringToHash)));
         }
     }
 }
