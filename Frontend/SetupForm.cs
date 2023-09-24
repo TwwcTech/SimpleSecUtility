@@ -1,5 +1,6 @@
 ﻿using SimpleSecUtility.AppResources;
 using SimpleSecUtility.Backend;
+using SimpleSecUtility.Backend.AppSetup;
 using SimpleSecUtility.Backend.InputChecks;
 
 namespace SimpleSecUtility.Frontend
@@ -40,7 +41,7 @@ namespace SimpleSecUtility.Frontend
                     // REMOVE WHEN READY
                     // Testing
                     MessageBox.Show($"Hashed Password:\n{hashedPassword}");
-                    //SetupManager.RunSetup(hashedPassword, apiKey);
+                    //SetupManager.RunSetup(hashedPassword, apiKeyTextbox.Text.Trim());
                 }
                 else
                 {
