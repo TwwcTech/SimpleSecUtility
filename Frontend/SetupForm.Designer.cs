@@ -102,7 +102,7 @@
             apiKeyTextbox.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             apiKeyTextbox.Location = new Point(247, 122);
             apiKeyTextbox.Name = "apiKeyTextbox";
-            apiKeyTextbox.PlaceholderText = "Enter Your API Key";
+            apiKeyTextbox.PlaceholderText = "Enter Your Random.org API Key";
             apiKeyTextbox.Size = new Size(585, 37);
             apiKeyTextbox.TabIndex = 3;
             // 
