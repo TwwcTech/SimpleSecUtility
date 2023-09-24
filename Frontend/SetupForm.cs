@@ -39,7 +39,7 @@ namespace SimpleSecUtility.Frontend
                     string hashedPassword = Hasher.Hash(masterPassword);
                     // Testing
                     MessageBox.Show($"Hashed Password:\n{hashedPassword}");
-                    //SetupManager.RunSetup(hashedPassword);
+                    //SetupManager.RunSetup(hashedPassword, apiKey);
                 }
                 else
                 {
