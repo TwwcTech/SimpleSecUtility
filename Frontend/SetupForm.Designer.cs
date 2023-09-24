@@ -35,6 +35,7 @@
             MasterPassSubmitButton = new Button();
             SetupFormTooltip = new ToolTip(components);
             SetupControlsPanel = new Panel();
+            apiKeyTextbox = new TextBox();
             SetupInfoPanel.SuspendLayout();
             SetupControlsPanel.SuspendLayout();
             SuspendLayout();
@@ -62,17 +63,17 @@
             // MasterPasswordTextbox
             // 
             MasterPasswordTextbox.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            MasterPasswordTextbox.Location = new Point(307, 88);
+            MasterPasswordTextbox.Location = new Point(247, 44);
             MasterPasswordTextbox.Name = "MasterPasswordTextbox";
             MasterPasswordTextbox.PasswordChar = '*';
             MasterPasswordTextbox.PlaceholderText = "Enter Master Password";
-            MasterPasswordTextbox.Size = new Size(461, 37);
+            MasterPasswordTextbox.Size = new Size(585, 37);
             MasterPasswordTextbox.TabIndex = 1;
             // 
             // MasterPassSubmitButton
             // 
             MasterPassSubmitButton.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            MasterPassSubmitButton.Location = new Point(453, 166);
+            MasterPassSubmitButton.Location = new Point(455, 206);
             MasterPassSubmitButton.Name = "MasterPassSubmitButton";
             MasterPassSubmitButton.Size = new Size(150, 52);
             MasterPassSubmitButton.TabIndex = 2;
@@ -87,6 +88,7 @@
             // 
             // SetupControlsPanel
             // 
+            SetupControlsPanel.Controls.Add(apiKeyTextbox);
             SetupControlsPanel.Controls.Add(MasterPassSubmitButton);
             SetupControlsPanel.Controls.Add(MasterPasswordTextbox);
             SetupControlsPanel.Dock = DockStyle.Bottom;
@@ -94,6 +96,15 @@
             SetupControlsPanel.Name = "SetupControlsPanel";
             SetupControlsPanel.Size = new Size(1070, 297);
             SetupControlsPanel.TabIndex = 1;
+            // 
+            // apiKeyTextbox
+            // 
+            apiKeyTextbox.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            apiKeyTextbox.Location = new Point(247, 122);
+            apiKeyTextbox.Name = "apiKeyTextbox";
+            apiKeyTextbox.PlaceholderText = "Enter Your API Key";
+            apiKeyTextbox.Size = new Size(585, 37);
+            apiKeyTextbox.TabIndex = 3;
             // 
             // SetupForm
             // 
@@ -126,5 +137,6 @@
         private Button MasterPassSubmitButton;
         private ToolTip SetupFormTooltip;
         private Panel SetupControlsPanel;
+        private TextBox apiKeyTextbox;
     }
 }
