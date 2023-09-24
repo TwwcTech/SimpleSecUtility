@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             SetupInfoPanel = new Panel();
             SetupInfoLabel = new Label();
             MasterPasswordTextbox = new TextBox();
             MasterPassSubmitButton = new Button();
+            SetupFormTooltip = new ToolTip(components);
             SetupInfoPanel.SuspendLayout();
             SuspendLayout();
             // 
@@ -68,13 +70,18 @@
             // MasterPassSubmitButton
             // 
             MasterPassSubmitButton.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            MasterPassSubmitButton.Location = new Point(480, 440);
+            MasterPassSubmitButton.Location = new Point(453, 436);
             MasterPassSubmitButton.Name = "MasterPassSubmitButton";
             MasterPassSubmitButton.Size = new Size(150, 52);
             MasterPassSubmitButton.TabIndex = 2;
             MasterPassSubmitButton.Text = "Submit";
             MasterPassSubmitButton.UseVisualStyleBackColor = true;
             MasterPassSubmitButton.Click += MasterPassSubmitButton_Click;
+            // 
+            // SetupFormTooltip
+            // 
+            SetupFormTooltip.AutomaticDelay = 250;
+            SetupFormTooltip.IsBalloon = true;
             // 
             // SetupForm
             // 
@@ -105,5 +112,6 @@
         private Label SetupInfoLabel;
         private TextBox MasterPasswordTextbox;
         private Button MasterPassSubmitButton;
+        private ToolTip SetupFormTooltip;
     }
 }
