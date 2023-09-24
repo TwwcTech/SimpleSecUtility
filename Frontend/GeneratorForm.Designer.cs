@@ -68,6 +68,7 @@
             RequestButton.TabIndex = 6;
             RequestButton.Text = "Request";
             RequestButton.UseVisualStyleBackColor = true;
+            RequestButton.Click += RequestButton_Click;
             // 
             // PinLabel
             // 
@@ -96,6 +97,7 @@
             PinLengthPicker.Name = "PinLengthPicker";
             PinLengthPicker.Size = new Size(180, 37);
             PinLengthPicker.TabIndex = 3;
+            PinLengthPicker.ValueChanged += PinLengthPicker_ValueChanged;
             // 
             // PasswordLengthPicker
             // 
@@ -104,6 +106,7 @@
             PasswordLengthPicker.Name = "PasswordLengthPicker";
             PasswordLengthPicker.Size = new Size(180, 37);
             PasswordLengthPicker.TabIndex = 2;
+            PasswordLengthPicker.ValueChanged += PasswordLengthPicker_ValueChanged;
             // 
             // PinCheckbox
             // 
@@ -115,6 +118,7 @@
             PinCheckbox.TabIndex = 1;
             PinCheckbox.Text = "PIN ------------------- ";
             PinCheckbox.UseVisualStyleBackColor = true;
+            PinCheckbox.CheckedChanged += PinCheckbox_CheckedChanged;
             // 
             // PasswordCheckbox
             // 
@@ -126,6 +130,7 @@
             PasswordCheckbox.TabIndex = 0;
             PasswordCheckbox.Text = "Password ---------- ";
             PasswordCheckbox.UseVisualStyleBackColor = true;
+            PasswordCheckbox.CheckedChanged += PasswordCheckbox_CheckedChanged;
             // 
             // OutputPanel
             // 
