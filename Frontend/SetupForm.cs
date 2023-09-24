@@ -45,12 +45,12 @@ namespace SimpleSecUtility.Frontend
                 }
                 else
                 {
-                    MessageBox.Show(Statics.PasswordRequirementsInfo, "Password Entry Error");
+                    MessageBox.Show(Statics.PasswordRequirementsInfo, "Password Entry Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
-                MessageBox.Show("Entry or Entries must not be empty", "Entry Error");
+                MessageBox.Show("Entry or Entries must not be empty", "Entry Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
