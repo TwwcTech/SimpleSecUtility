@@ -120,7 +120,7 @@
             Name = "SetupForm";
             SizeGripStyle = SizeGripStyle.Hide;
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Setup";
+            Text = "Simple Sec Utility Setup";
             Load += SetupForm_Load;
             SetupInfoPanel.ResumeLayout(false);
             SetupInfoPanel.PerformLayout();
