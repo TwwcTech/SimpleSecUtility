@@ -21,6 +21,7 @@ namespace SimpleSecUtility.Frontend
 
             SetupFormTooltip = new ToolTip();
             SetupFormTooltip.SetToolTip(SetupInfoPanel, "Setup Information");
+            SetupFormTooltip.SetToolTip(MasterPasswordTextbox, Statics.PasswordRequirementsInfo);
             SetupFormTooltip.SetToolTip(MasterPassSubmitButton, "Click to submit the master password entry");
         }
 
@@ -31,11 +32,17 @@ namespace SimpleSecUtility.Frontend
 
             if (areTextboxInputsEmpty == false)
             {
-                bool isPasswordSecure = PasswordSecurityCheck.Instance!.IsPasswordSecure(MasterPasswordTextbox.Text.Trim());
+                string masterPassword = MasterPasswordTextbox.Text.Trim();
+                bool isPasswordSecure = PasswordSecurityCheck.Instance!.IsPasswordSecure(masterPassword);
+
                 if (isPasswordSecure)
                 {
-                    string hashedPassword = Hasher.Hash(MasterPasswordTextbox.Text.Trim());
+                    string hashedPassword = Hasher.Hash(masterPassword);
                     SetupManager.RunSetup(hashedPassword);
+                }
+                else
+                {
+                    MessageBox.Show(Statics.PasswordRequirementsInfo, "Password Entry Error");
                 }
             }
             else
