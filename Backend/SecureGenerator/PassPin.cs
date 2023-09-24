@@ -1,6 +1,4 @@
-﻿using System.Drawing.Text;
-
-namespace SimpleSecUtility.Backend.SecureGenerator
+﻿namespace SimpleSecUtility.Backend.SecureGenerator
 {
     internal class PassPin
     {
