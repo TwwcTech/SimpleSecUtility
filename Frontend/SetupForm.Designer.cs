@@ -28,14 +28,62 @@
         /// </summary>
         private void InitializeComponent()
         {
+            SetupInfoPanel = new Panel();
+            SetupInfoLabel = new Label();
+            MasterPasswordTextbox = new TextBox();
+            MasterPassSubmitButton = new Button();
+            SetupInfoPanel.SuspendLayout();
             SuspendLayout();
+            // 
+            // SetupInfoPanel
+            // 
+            SetupInfoPanel.BorderStyle = BorderStyle.FixedSingle;
+            SetupInfoPanel.Controls.Add(SetupInfoLabel);
+            SetupInfoPanel.Dock = DockStyle.Top;
+            SetupInfoPanel.Location = new Point(0, 0);
+            SetupInfoPanel.Name = "SetupInfoPanel";
+            SetupInfoPanel.Size = new Size(1070, 247);
+            SetupInfoPanel.TabIndex = 0;
+            // 
+            // SetupInfoLabel
+            // 
+            SetupInfoLabel.AutoSize = true;
+            SetupInfoLabel.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            SetupInfoLabel.Location = new Point(159, 8);
+            SetupInfoLabel.Name = "SetupInfoLabel";
+            SetupInfoLabel.Size = new Size(0, 28);
+            SetupInfoLabel.TabIndex = 0;
+            SetupInfoLabel.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // MasterPasswordTextbox
+            // 
+            MasterPasswordTextbox.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            MasterPasswordTextbox.Location = new Point(315, 329);
+            MasterPasswordTextbox.Name = "MasterPasswordTextbox";
+            MasterPasswordTextbox.PasswordChar = '*';
+            MasterPasswordTextbox.PlaceholderText = "Enter Master Password";
+            MasterPasswordTextbox.Size = new Size(461, 37);
+            MasterPasswordTextbox.TabIndex = 1;
+            // 
+            // MasterPassSubmitButton
+            // 
+            MasterPassSubmitButton.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            MasterPassSubmitButton.Location = new Point(480, 440);
+            MasterPassSubmitButton.Name = "MasterPassSubmitButton";
+            MasterPassSubmitButton.Size = new Size(150, 52);
+            MasterPassSubmitButton.TabIndex = 2;
+            MasterPassSubmitButton.Text = "Submit";
+            MasterPassSubmitButton.UseVisualStyleBackColor = true;
             // 
             // SetupForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1070, 550);
             ControlBox = false;
+            Controls.Add(MasterPassSubmitButton);
+            Controls.Add(MasterPasswordTextbox);
+            Controls.Add(SetupInfoPanel);
             FormBorderStyle = FormBorderStyle.Fixed3D;
             MaximizeBox = false;
             MinimizeBox = false;
@@ -44,9 +92,17 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Setup";
             Load += SetupForm_Load;
+            SetupInfoPanel.ResumeLayout(false);
+            SetupInfoPanel.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private Panel SetupInfoPanel;
+        private Label SetupInfoLabel;
+        private TextBox MasterPasswordTextbox;
+        private Button MasterPassSubmitButton;
     }
 }
