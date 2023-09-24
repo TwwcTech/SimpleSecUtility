@@ -9,14 +9,10 @@ namespace SimpleSecUtility.Backend.AppSetup
         {
             using (RegistryKey setupStatusKey = Registry.CurrentUser.OpenSubKey(Statics.RegPath)!)
             {
-                try
+                if (setupStatusKey != null)
                 {
-                    if (setupStatusKey != null)
-                    {
-                        return true;
-                    }
+                    return true;
                 }
-                catch (Exception ex) { ex.ToString(); }
                 return false;
             }
         }
@@ -27,9 +23,13 @@ namespace SimpleSecUtility.Backend.AppSetup
             {
                 if (setupKey != null)
                 {
-                    setupKey.SetValue("Setup Date", DateTime.Now.ToString("ddMMyyyy"));
-                    setupKey.SetValue("Version", Statics.AppVersion);
-                    setupKey.SetValue("Master", Hasher.Hash(masterPassword));
+                    try
+                    {
+                        setupKey.SetValue("Setup Date", DateTime.Now.ToString("ddMMyyyy"));
+                        setupKey.SetValue("Version", Statics.AppVersion);
+                        setupKey.SetValue("Master", Hasher.Hash(masterPassword));
+                    }
+                    catch (Exception ex) { ex.ToString(); }
                 }
             }
         }
