@@ -79,6 +79,7 @@
             MinimizeBox = false;
             Name = "MainForm";
             SizeGripStyle = SizeGripStyle.Hide;
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Simple Sec Utility";
             Load += MainForm_Load;
             ResumeLayout(false);
