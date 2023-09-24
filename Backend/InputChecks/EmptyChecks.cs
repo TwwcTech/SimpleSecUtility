@@ -50,7 +50,7 @@
             {
                 int emptyNumericBoxes = numericboxes.Length;
 
-                foreach(NumericUpDown numericBox in numericboxes)
+                foreach (NumericUpDown numericBox in numericboxes)
                 {
                     if (!string.IsNullOrWhiteSpace(numericBox.Text))
                     {

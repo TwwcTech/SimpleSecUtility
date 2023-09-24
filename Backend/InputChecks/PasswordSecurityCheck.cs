@@ -26,7 +26,7 @@ namespace SimpleSecUtility.Backend.InputChecks
 
         public bool IsPasswordSecure(string password)
         {
-            lock ( _instanceLock)
+            lock (_instanceLock)
             {
                 Regex numbersRegex = new Regex(@"\d");
                 Regex charactersRegex = new Regex(@"[-!@#$%^&*()?_,.]");

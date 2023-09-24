@@ -1,5 +1,5 @@
-using SimpleSecUtility.Frontend;
 using SimpleSecUtility.Backend.AppSetup;
+using SimpleSecUtility.Frontend;
 
 namespace SimpleSecUtility
 {
