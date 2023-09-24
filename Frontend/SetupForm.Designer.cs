@@ -74,6 +74,7 @@
             MasterPassSubmitButton.TabIndex = 2;
             MasterPassSubmitButton.Text = "Submit";
             MasterPassSubmitButton.UseVisualStyleBackColor = true;
+            MasterPassSubmitButton.Click += MasterPassSubmitButton_Click;
             // 
             // SetupForm
             // 
