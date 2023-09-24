@@ -47,6 +47,7 @@
             PassPinButton.TabIndex = 0;
             PassPinButton.TextAlign = ContentAlignment.BottomCenter;
             PassPinButton.UseVisualStyleBackColor = true;
+            PassPinButton.Click += PassPinButton_Click;
             // 
             // FileEnDecButton
             // 
@@ -59,6 +60,7 @@
             FileEnDecButton.TabIndex = 1;
             FileEnDecButton.TextAlign = ContentAlignment.BottomCenter;
             FileEnDecButton.UseVisualStyleBackColor = true;
+            FileEnDecButton.Click += FileEnDecButton_Click;
             // 
             // toolTip
             // 
