@@ -35,30 +35,32 @@ namespace SimpleSecUtility
 
         private void PassPinButton_Click(object sender, EventArgs e)
         {
-            WindowState = FormWindowState.Minimized;
             Hide();
 
             Form passPinGeneratorForm = new GeneratorForm();
             passPinGeneratorForm.ShowDialog();
-            if (passPinGeneratorForm.IsDisposed)
+            passPinGeneratorForm.WindowState = FormWindowState.Normal;
+
+            if (!passPinGeneratorForm.Visible)
             {
+                Show();
                 WindowState = FormWindowState.Normal;
-                Visible = true;
                 Focus();
             }
         }
 
         private void FileEnDecButton_Click(object sender, EventArgs e)
         {
-            WindowState = FormWindowState.Minimized;
             Hide();
 
             Form fileEnDecForm = new EnDecForm();
             fileEnDecForm.ShowDialog();
-            if (fileEnDecForm.IsDisposed)
+            fileEnDecForm.WindowState = FormWindowState.Normal;
+
+            if (!fileEnDecForm.Visible)
             {
+                Show();
                 WindowState = FormWindowState.Normal;
-                Visible = true;
                 Focus();
             }
         }
