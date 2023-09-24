@@ -10,8 +10,6 @@ namespace SimpleSecUtility
             InitializeComponent();
         }
 
-        /* - Connect the button event handlers */
-
         private void MainForm_Load(object sender, EventArgs e)
         {
             bool setupStatus = SetupManager.HasAppBeenSetup();
