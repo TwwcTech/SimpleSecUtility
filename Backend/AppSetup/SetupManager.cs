@@ -17,7 +17,7 @@ namespace SimpleSecUtility.Backend.AppSetup
             }
         }
 
-        public static void RunSetup(string masterPassword)
+        public static void RunSetup(string masterPassword, string apiKey)
         {
             using (RegistryKey setupKey = Registry.CurrentUser.CreateSubKey(Statics.RegPath))
             {
@@ -28,6 +28,7 @@ namespace SimpleSecUtility.Backend.AppSetup
                         setupKey.SetValue("Setup Date", DateTime.Now.ToString("ddMMyyyy"));
                         setupKey.SetValue("Version", Statics.AppVersion);
                         setupKey.SetValue("Master", masterPassword);
+                        setupKey.SetValue("API Key", apiKey);
                     }
                     catch (Exception ex) { ex.ToString(); }
                 }
