@@ -27,7 +27,7 @@ namespace SimpleSecUtility.Backend.AppSetup
                     {
                         setupKey.SetValue("Setup Date", DateTime.Now.ToString("ddMMyyyy"));
                         setupKey.SetValue("Version", Statics.AppVersion);
-                        setupKey.SetValue("Master", Hasher.Hash(masterPassword));
+                        setupKey.SetValue("Master", masterPassword);
                     }
                     catch (Exception ex) { ex.ToString(); }
                 }
