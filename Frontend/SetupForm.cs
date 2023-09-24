@@ -18,16 +18,25 @@ namespace SimpleSecUtility.Frontend
             SetupInfoLabel.TextAlign = ContentAlignment.MiddleCenter;
 
             ActiveControl = MasterPassSubmitButton;
+
+            SetupFormTooltip = new ToolTip();
+            SetupFormTooltip.SetToolTip(SetupInfoPanel, "Setup Information");
+            SetupFormTooltip.SetToolTip(MasterPassSubmitButton, "Click to submit the master password entry");
         }
 
         private void MasterPassSubmitButton_Click(object sender, EventArgs e)
         {
             TextBox[] setupInputs = new TextBox[] { MasterPasswordTextbox };
             bool areTextboxInputsEmpty = InputChecks.Instance.AreTextboxInputsEmpty(setupInputs);
-            if (areTextboxInputsEmpty ==  false)
+
+            if (areTextboxInputsEmpty == false)
             {
                 string hashedPassword = Hasher.Hash(MasterPasswordTextbox.Text.Trim());
                 SetupManager.RunSetup(hashedPassword);
+            }
+            else
+            {
+                MessageBox.Show("Entry or Entries must not be empty", "Entry Error");
             }
         }
     }
