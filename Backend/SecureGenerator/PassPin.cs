@@ -12,7 +12,7 @@
                 string requestResult = string.Empty;
                 string apiUrl = string.Empty;
 
-                switch (requestType.ToLower())
+                switch (requestType.ToLower().Trim())
                 {
                     case "password":
                         if (requestLength >= _defaultPasswordLength)
@@ -31,6 +31,7 @@
                 {
                     passwordClient.DefaultRequestHeaders.Add("X-RandomOrg-ApiKey", ""); // Complete the API Key
                     HttpResponseMessage response = await passwordClient.GetAsync(apiUrl);
+
                     if (response.IsSuccessStatusCode)
                     {
                         requestResult = await response.Content.ReadAsStringAsync();
