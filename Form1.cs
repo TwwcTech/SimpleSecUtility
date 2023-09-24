@@ -13,7 +13,7 @@ namespace SimpleSecUtility
         private void MainForm_Load(object sender, EventArgs e)
         {
             bool setupStatus = SetupManager.HasAppBeenSetup();
-            if (setupStatus is false)
+            if (!setupStatus)
             {
                 DialogResult dialogResult = MessageBox.Show("Simple Sec Utility has never been run. Would you like to continue with seutp?", "Setup Check", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
                 if (dialogResult == DialogResult.Yes)
@@ -35,12 +35,14 @@ namespace SimpleSecUtility
 
         private void PassPinButton_Click(object sender, EventArgs e)
         {
-            // Code goes here
+            Form passPinGeneratorForm = new GeneratorForm();
+            passPinGeneratorForm.ShowDialog();
         }
 
         private void FileEnDecButton_Click(object sender, EventArgs e)
         {
-            // Code goes here
+            Form fileEnDecForm = new EnDecForm();
+            fileEnDecForm.ShowDialog();
         }
     }
 }

@@ -30,7 +30,7 @@ namespace SimpleSecUtility.Frontend
             TextBox[] setupInputs = new TextBox[] { MasterPasswordTextbox, apiKeyTextbox };
             bool areTextboxInputsEmpty = EmptyChecks.Instance.AreTextboxInputsEmpty(setupInputs);
 
-            if (areTextboxInputsEmpty == false)
+            if (!areTextboxInputsEmpty)
             {
                 string masterPassword = MasterPasswordTextbox.Text.Trim();
                 bool isPasswordSecure = PasswordSecurityCheck.Instance!.IsPasswordSecure(masterPassword);
