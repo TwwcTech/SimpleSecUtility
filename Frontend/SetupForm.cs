@@ -37,6 +37,7 @@ namespace SimpleSecUtility.Frontend
                 if (isPasswordSecure)
                 {
                     string hashedPassword = Hasher.Hash(masterPassword);
+                    // REMOVE WHEN READY
                     // Testing
                     MessageBox.Show($"Hashed Password:\n{hashedPassword}");
                     //SetupManager.RunSetup(hashedPassword, apiKey);
