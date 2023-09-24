@@ -26,7 +26,7 @@ namespace SimpleSecUtility.Frontend
 
         private void MasterPassSubmitButton_Click(object sender, EventArgs e)
         {
-            TextBox[] setupInputs = new TextBox[] { MasterPasswordTextbox };
+            TextBox[] setupInputs = new TextBox[] { MasterPasswordTextbox, apiKeyTextbox };
             bool areTextboxInputsEmpty = EmptyChecks.Instance.AreTextboxInputsEmpty(setupInputs);
 
             if (areTextboxInputsEmpty == false)
