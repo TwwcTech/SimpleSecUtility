@@ -1,4 +1,7 @@
 ﻿using SimpleSecUtility.AppResources;
+using SimpleSecUtility.Backend;
+using SimpleSecUtility.Backend.AppSetup;
+using SimpleSecUtility.Backend.InputChecks;
 
 namespace SimpleSecUtility.Frontend
 {
@@ -15,6 +18,17 @@ namespace SimpleSecUtility.Frontend
             SetupInfoLabel.TextAlign = ContentAlignment.MiddleCenter;
 
             ActiveControl = MasterPassSubmitButton;
+        }
+
+        private void MasterPassSubmitButton_Click(object sender, EventArgs e)
+        {
+            TextBox[] setupInputs = new TextBox[] { MasterPasswordTextbox };
+            bool areTextboxInputsEmpty = InputChecks.Instance.AreTextboxInputsEmpty(setupInputs);
+            if (areTextboxInputsEmpty ==  false)
+            {
+                string hashedPassword = Hasher.Hash(MasterPasswordTextbox.Text.Trim());
+                SetupManager.RunSetup(hashedPassword);
+            }
         }
     }
 }
