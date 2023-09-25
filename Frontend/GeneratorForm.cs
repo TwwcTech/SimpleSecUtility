@@ -1,4 +1,5 @@
-﻿using SimpleSecUtility.Backend.SecureGenerator;
+﻿using SimpleSecUtility.Backend.InputChecks;
+using SimpleSecUtility.Backend.SecureGenerator;
 
 namespace SimpleSecUtility.Frontend
 {
@@ -71,25 +72,35 @@ namespace SimpleSecUtility.Frontend
 
         private async void RequestButton_Click(object sender, EventArgs e)
         {
-            if (!PasswordCheckbox.Checked && !PinCheckbox.Checked)
+            NumericUpDown[] lengthPickers = new NumericUpDown[] { PasswordLengthPicker, PinLengthPicker };
+            bool areLengthPickersEmptyorZero = EmptyChecks.Instance.AreNumericBoxInputsEmpty(lengthPickers);
+
+            if (!areLengthPickersEmptyorZero)
             {
-                MessageBox.Show("An option must be checked, please select an option above", "Request Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (!PasswordCheckbox.Checked && !PinCheckbox.Checked)
+                {
+                    MessageBox.Show("An option must be checked, please select an option above", "Request Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (PasswordCheckbox.Checked)
+                {
+                    string securePassword = await PassPin.ReturnSecurePasswordOrPIN("password", (int)PasswordLengthPicker.Value);
+                    RequestResponseLabel.Text = securePassword;
+                    RequestResponseLabel.Location = new Point((OutputPanel.Width - RequestResponseLabel.Width) / 2, (OutputPanel.Height - RequestResponseLabel.Height) / 2);
+                    RequestResponseLabel.BorderStyle = BorderStyle.FixedSingle;
+                    RequestResponseLabel.Focus();
+                }
+                else if (PinCheckbox.Checked)
+                {
+                    string securePIN = await PassPin.ReturnSecurePasswordOrPIN("pin", (int)PinLengthPicker.Value);
+                    RequestResponseLabel.Text = securePIN;
+                    RequestResponseLabel.Location = new Point((OutputPanel.Width - RequestResponseLabel.Width) / 2, (OutputPanel.Height - RequestResponseLabel.Height) / 2);
+                    RequestResponseLabel.BorderStyle = BorderStyle.FixedSingle;
+                    RequestResponseLabel.Focus();
+                }
             }
-            else if (PasswordCheckbox.Checked)
+            else
             {
-                string securePassword = await PassPin.ReturnSecurePasswordOrPIN("password", (int)PasswordLengthPicker.Value);
-                RequestResponseLabel.Text = securePassword;
-                RequestResponseLabel.Location = new Point((OutputPanel.Width - RequestResponseLabel.Width) / 2, (OutputPanel.Height - RequestResponseLabel.Height) / 2);
-                RequestResponseLabel.BorderStyle = BorderStyle.FixedSingle;
-                RequestResponseLabel.Focus();
-            }
-            else if (PinCheckbox.Checked)
-            {
-                string securePIN = await PassPin.ReturnSecurePasswordOrPIN("pin", (int)PinLengthPicker.Value);
-                RequestResponseLabel.Text = securePIN;
-                RequestResponseLabel.Location = new Point((OutputPanel.Width - RequestResponseLabel.Width) / 2, (OutputPanel.Height - RequestResponseLabel.Height) / 2);
-                RequestResponseLabel.BorderStyle = BorderStyle.FixedSingle;
-                RequestResponseLabel.Focus();
+                MessageBox.Show("Length Pickers must not be emtpy or 0", "Length Picker Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
