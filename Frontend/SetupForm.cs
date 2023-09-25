@@ -53,6 +53,8 @@ namespace SimpleSecUtility.Frontend
             {
                 MessageBox.Show("Entry or Entries must not be empty", "Entry Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            MessageBox.Show("An internet connection will be required to use the Password/PIN Request Tool", "Quick Tip", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
