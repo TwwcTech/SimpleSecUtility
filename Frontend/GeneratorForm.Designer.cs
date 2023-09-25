@@ -39,9 +39,9 @@
             PasswordCheckbox = new CheckBox();
             OutputPanel = new Panel();
             RequestResponseLabel = new Label();
-            OutputLabel = new Label();
             OutputLabelMenu = new ContextMenuStrip(components);
             copyToolStripMenuItem = new ToolStripMenuItem();
+            OutputLabel = new Label();
             ControlsPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)PinLengthPicker).BeginInit();
             ((System.ComponentModel.ISupportInitialize)PasswordLengthPicker).BeginInit();
@@ -102,7 +102,6 @@
             PinLengthPicker.Name = "PinLengthPicker";
             PinLengthPicker.Size = new Size(180, 37);
             PinLengthPicker.TabIndex = 3;
-            PinLengthPicker.ValueChanged += PinLengthPicker_ValueChanged;
             PinLengthPicker.Leave += PinLengthPicker_Leave;
             // 
             // PasswordLengthPicker
@@ -112,7 +111,6 @@
             PasswordLengthPicker.Name = "PasswordLengthPicker";
             PasswordLengthPicker.Size = new Size(180, 37);
             PasswordLengthPicker.TabIndex = 2;
-            PasswordLengthPicker.ValueChanged += PasswordLengthPicker_ValueChanged;
             PasswordLengthPicker.Leave += PasswordLengthPicker_Leave;
             // 
             // PinCheckbox
@@ -161,6 +159,20 @@
             RequestResponseLabel.TabIndex = 1;
             RequestResponseLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // OutputLabelMenu
+            // 
+            OutputLabelMenu.ImageScalingSize = new Size(24, 24);
+            OutputLabelMenu.Items.AddRange(new ToolStripItem[] { copyToolStripMenuItem });
+            OutputLabelMenu.Name = "OutputLabelMenu";
+            OutputLabelMenu.Size = new Size(127, 36);
+            // 
+            // copyToolStripMenuItem
+            // 
+            copyToolStripMenuItem.Name = "copyToolStripMenuItem";
+            copyToolStripMenuItem.Size = new Size(126, 32);
+            copyToolStripMenuItem.Text = "Copy";
+            copyToolStripMenuItem.Click += copyToolStripMenuItem_Click;
+            // 
             // OutputLabel
             // 
             OutputLabel.AutoSize = true;
@@ -170,20 +182,6 @@
             OutputLabel.Size = new Size(81, 23);
             OutputLabel.TabIndex = 0;
             OutputLabel.Text = "OUTPUT";
-            // 
-            // OutputLabelMenu
-            // 
-            OutputLabelMenu.ImageScalingSize = new Size(24, 24);
-            OutputLabelMenu.Items.AddRange(new ToolStripItem[] { copyToolStripMenuItem });
-            OutputLabelMenu.Name = "OutputLabelMenu";
-            OutputLabelMenu.Size = new Size(241, 69);
-            // 
-            // copyToolStripMenuItem
-            // 
-            copyToolStripMenuItem.Name = "copyToolStripMenuItem";
-            copyToolStripMenuItem.Size = new Size(240, 32);
-            copyToolStripMenuItem.Text = "Copy";
-            copyToolStripMenuItem.Click += copyToolStripMenuItem_Click;
             // 
             // GeneratorForm
             // 
