@@ -14,6 +14,12 @@ namespace SimpleSecUtility.Backend.SecureGenerator
 
                 switch (requestType.ToLower().Trim())
                 {
+
+                    /* Use the JSON-RPC method for retreiving the Password or PIN using Random.org
+                     * - URL = "https://api.random.org/json-rpc/2/invoke"
+                     * - Request Body = $"{{\"jsonrpc\": \"2.0\", \"method\": \"generateIntegers\", \"params\": {{ \"apiKey\": \"{apiKey}\", \"n\": 5, \"min\": 1, \"max\": 10, \"replacement\": true, \"base\": 10 }}, \"id\": 1 }}"
+                     * - Type = "application/json" */
+
                     case "password":
                         apiUrl = $"https://www.random.org/strings/?num=1&len={requestLength}&digits=on&upperalpha=on&loweralpha=on&unique=on&format=plain&rnd=new";
                         break;
