@@ -8,6 +8,7 @@ namespace SimpleSecUtility.Backend.SecureGenerator
     internal class PassPin
     {
         private const int _defaultPINLength = 4;
+        //const string randomApiUrl = "https://api.random.org/json-rpc/2/invoke";
 
         // Change Task<string> return type to Task<JsonResponseParser> 
         public static async Task<string> ReturnSecurePasswordOrPIN(string requestType, int requestLength)
@@ -15,8 +16,7 @@ namespace SimpleSecUtility.Backend.SecureGenerator
             using (HttpClient passwordClient = new HttpClient())
             {
                 string apiUrl = string.Empty;
-                //const string randomApiUrl = "https://api.random.org/json-rpc/2/invoke";
-                string requestBody = string.Empty;
+                //string requestBody = string.Empty;
 
                 switch (requestType.ToLower().Trim())
                 {
