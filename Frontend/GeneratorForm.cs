@@ -82,6 +82,8 @@ namespace SimpleSecUtility.Frontend
                 bool isPasswordLengthPickerEmptyorZero = EmptyChecks.Instance.AreNumericBoxInputsEmpty(passwordLengthPicker);
                 if (!isPasswordLengthPickerEmptyorZero)
                 {
+                    //RandomData randomData = await PassPin.ReturnSecurePasswordOrPIN("password", (int)PasswordLengthPicker.Value);
+                    //RequestResponseLabel.Text = randomData.data;
                     string securePassword = await PassPin.ReturnSecurePasswordOrPIN("password", (int)PasswordLengthPicker.Value);
                     RequestResponseLabel.Text = securePassword;
                     RequestResponseLabel.Location = new Point((OutputPanel.Width - RequestResponseLabel.Width) / 2, (OutputPanel.Height - RequestResponseLabel.Height) / 2);
@@ -99,6 +101,8 @@ namespace SimpleSecUtility.Frontend
                 bool isPinLengthCheckerEmptyorZero = EmptyChecks.Instance.AreNumericBoxInputsEmpty(pinLengthPicker);
                 if (!isPinLengthCheckerEmptyorZero)
                 {
+                    //RandomData randomData = await PassPin.ReturnSecurePasswordOrPIN("pin", (int)PasswordLengthPicker.Value);
+                    //RequestResponseLabel.Text = randomData.data;
                     string securePIN = await PassPin.ReturnSecurePasswordOrPIN("pin", (int)PinLengthPicker.Value);
                     RequestResponseLabel.Text = securePIN;
                     RequestResponseLabel.Location = new Point((OutputPanel.Width - RequestResponseLabel.Width) / 2, (OutputPanel.Height - RequestResponseLabel.Height) / 2);
