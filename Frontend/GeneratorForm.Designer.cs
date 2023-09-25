@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             ControlsPanel = new Panel();
             RequestButton = new Button();
             PinLengthLabel = new Label();
@@ -39,10 +40,13 @@
             OutputPanel = new Panel();
             RequestResponseLabel = new Label();
             OutputLabel = new Label();
+            OutputLabelMenu = new ContextMenuStrip(components);
+            copyToolStripMenuItem = new ToolStripMenuItem();
             ControlsPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)PinLengthPicker).BeginInit();
             ((System.ComponentModel.ISupportInitialize)PasswordLengthPicker).BeginInit();
             OutputPanel.SuspendLayout();
+            OutputLabelMenu.SuspendLayout();
             SuspendLayout();
             // 
             // ControlsPanel
@@ -149,6 +153,7 @@
             // RequestResponseLabel
             // 
             RequestResponseLabel.AutoSize = true;
+            RequestResponseLabel.ContextMenuStrip = OutputLabelMenu;
             RequestResponseLabel.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
             RequestResponseLabel.Location = new Point(368, 89);
             RequestResponseLabel.Name = "RequestResponseLabel";
@@ -165,6 +170,20 @@
             OutputLabel.Size = new Size(81, 23);
             OutputLabel.TabIndex = 0;
             OutputLabel.Text = "OUTPUT";
+            // 
+            // OutputLabelMenu
+            // 
+            OutputLabelMenu.ImageScalingSize = new Size(24, 24);
+            OutputLabelMenu.Items.AddRange(new ToolStripItem[] { copyToolStripMenuItem });
+            OutputLabelMenu.Name = "OutputLabelMenu";
+            OutputLabelMenu.Size = new Size(241, 69);
+            // 
+            // copyToolStripMenuItem
+            // 
+            copyToolStripMenuItem.Name = "copyToolStripMenuItem";
+            copyToolStripMenuItem.Size = new Size(240, 32);
+            copyToolStripMenuItem.Text = "Copy";
+            copyToolStripMenuItem.Click += copyToolStripMenuItem_Click;
             // 
             // GeneratorForm
             // 
@@ -185,6 +204,7 @@
             ((System.ComponentModel.ISupportInitialize)PasswordLengthPicker).EndInit();
             OutputPanel.ResumeLayout(false);
             OutputPanel.PerformLayout();
+            OutputLabelMenu.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -201,5 +221,7 @@
         private Button RequestButton;
         private Label OutputLabel;
         private Label RequestResponseLabel;
+        private ContextMenuStrip OutputLabelMenu;
+        private ToolStripMenuItem copyToolStripMenuItem;
     }
 }
