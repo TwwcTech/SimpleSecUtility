@@ -72,16 +72,15 @@ namespace SimpleSecUtility.Frontend
 
         private async void RequestButton_Click(object sender, EventArgs e)
         {
-            NumericUpDown[] lengthPickers = new NumericUpDown[] { PasswordLengthPicker, PinLengthPicker };
-            bool areLengthPickersEmptyorZero = EmptyChecks.Instance.AreNumericBoxInputsEmpty(lengthPickers);
-
-            if (!areLengthPickersEmptyorZero)
+            if (!PasswordCheckbox.Checked && !PinCheckbox.Checked)
             {
-                if (!PasswordCheckbox.Checked && !PinCheckbox.Checked)
-                {
-                    MessageBox.Show("An option must be checked, please select an option above", "Request Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else if (PasswordCheckbox.Checked)
+                MessageBox.Show("An option must be checked, please select an option above", "Request Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (PasswordCheckbox.Checked)
+            {
+                NumericUpDown[] passwordLengthPicker = new NumericUpDown[] { PasswordLengthPicker };
+                bool isPasswordLengthPickerEmptyorZero = EmptyChecks.Instance.AreNumericBoxInputsEmpty(passwordLengthPicker);
+                if (!isPasswordLengthPickerEmptyorZero)
                 {
                     string securePassword = await PassPin.ReturnSecurePasswordOrPIN("password", (int)PasswordLengthPicker.Value);
                     RequestResponseLabel.Text = securePassword;
@@ -89,7 +88,16 @@ namespace SimpleSecUtility.Frontend
                     RequestResponseLabel.BorderStyle = BorderStyle.FixedSingle;
                     RequestResponseLabel.Focus();
                 }
-                else if (PinCheckbox.Checked)
+                else
+                {
+                    MessageBox.Show("Password Length Picker must not be empty or 0", "Password Lenght Picker Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else if (PinCheckbox.Checked)
+            {
+                NumericUpDown[] pinLengthPicker = new NumericUpDown[] { PinLengthPicker };
+                bool isPinLengthCheckerEmptyorZero = EmptyChecks.Instance.AreNumericBoxInputsEmpty(pinLengthPicker);
+                if (!isPinLengthCheckerEmptyorZero)
                 {
                     string securePIN = await PassPin.ReturnSecurePasswordOrPIN("pin", (int)PinLengthPicker.Value);
                     RequestResponseLabel.Text = securePIN;
@@ -97,10 +105,10 @@ namespace SimpleSecUtility.Frontend
                     RequestResponseLabel.BorderStyle = BorderStyle.FixedSingle;
                     RequestResponseLabel.Focus();
                 }
-            }
-            else
-            {
-                MessageBox.Show("Length Pickers must not be emtpy or 0", "Length Picker Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else
+                {
+                    MessageBox.Show("PIN Length Picker must not be empty or 0", "Pin Length Picker Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
