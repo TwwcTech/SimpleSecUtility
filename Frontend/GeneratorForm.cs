@@ -97,16 +97,16 @@ namespace SimpleSecUtility.Frontend
             {
                 string securePassword = await PassPin.ReturnSecurePasswordOrPIN("password", (int)PasswordLengthPicker.Value);
                 RequestResponseLabel.Text = securePassword;
-                RequestResponseLabel.BorderStyle = BorderStyle.FixedSingle;
                 RequestResponseLabel.Location = new Point((OutputPanel.Width - RequestResponseLabel.Width) / 2, (OutputPanel.Height - RequestResponseLabel.Height) / 2);
+                RequestResponseLabel.BorderStyle = BorderStyle.FixedSingle;
                 RequestResponseLabel.Focus();
             }
             else if (PinCheckbox.Checked)
             {
                 string securePIN = await PassPin.ReturnSecurePasswordOrPIN("pin", (int)PinLengthPicker.Value);
                 RequestResponseLabel.Text = securePIN;
-                RequestResponseLabel.BorderStyle = BorderStyle.FixedSingle;
                 RequestResponseLabel.Location = new Point((OutputPanel.Width - RequestResponseLabel.Width) / 2, (OutputPanel.Height - RequestResponseLabel.Height) / 2);
+                RequestResponseLabel.BorderStyle = BorderStyle.FixedSingle;
                 RequestResponseLabel.Focus();
             }
         }
