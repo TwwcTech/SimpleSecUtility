@@ -1,6 +1,5 @@
 ﻿using SimpleSecUtility.AppResources;
 using SimpleSecUtility.Backend;
-using SimpleSecUtility.Backend.AppSetup;
 using SimpleSecUtility.Backend.InputChecks;
 
 namespace SimpleSecUtility.Frontend
