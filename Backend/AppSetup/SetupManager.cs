@@ -25,10 +25,10 @@ namespace SimpleSecUtility.Backend.AppSetup
                 {
                     try
                     {
-                        setupKey.SetValue("Setup Date", DateTime.Now.ToString("ddMMyyyy"));
-                        setupKey.SetValue("Version", Statics.AppVersion);
-                        setupKey.SetValue("Master", masterPassword);
                         setupKey.SetValue("API Key", apiKey);
+                        setupKey.SetValue("Master", masterPassword);
+                        setupKey.SetValue("Version", Statics.AppVersion);
+                        setupKey.SetValue("Setup Date", DateTime.Now.ToString("ddMMyyyy"));
                     }
                     catch (Exception ex) { ex.ToString(); }
                 }
