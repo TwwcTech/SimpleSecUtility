@@ -30,7 +30,7 @@
         {
             ControlsPanel = new Panel();
             RequestButton = new Button();
-            PinLabel = new Label();
+            PinLengthLabel = new Label();
             PassLengthLabel = new Label();
             PinLengthPicker = new NumericUpDown();
             PasswordLengthPicker = new NumericUpDown();
@@ -38,6 +38,7 @@
             PasswordCheckbox = new CheckBox();
             OutputPanel = new Panel();
             OutputLabel = new Label();
+            RequestResponseLabel = new Label();
             ControlsPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)PinLengthPicker).BeginInit();
             ((System.ComponentModel.ISupportInitialize)PasswordLengthPicker).BeginInit();
@@ -47,7 +48,7 @@
             // ControlsPanel
             // 
             ControlsPanel.Controls.Add(RequestButton);
-            ControlsPanel.Controls.Add(PinLabel);
+            ControlsPanel.Controls.Add(PinLengthLabel);
             ControlsPanel.Controls.Add(PassLengthLabel);
             ControlsPanel.Controls.Add(PinLengthPicker);
             ControlsPanel.Controls.Add(PasswordLengthPicker);
@@ -70,15 +71,15 @@
             RequestButton.UseVisualStyleBackColor = true;
             RequestButton.Click += RequestButton_Click;
             // 
-            // PinLabel
+            // PinLengthLabel
             // 
-            PinLabel.AutoSize = true;
-            PinLabel.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            PinLabel.Location = new Point(400, 148);
-            PinLabel.Name = "PinLabel";
-            PinLabel.Size = new Size(153, 30);
-            PinLabel.TabIndex = 5;
-            PinLabel.Text = "PIN Length :";
+            PinLengthLabel.AutoSize = true;
+            PinLengthLabel.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            PinLengthLabel.Location = new Point(400, 148);
+            PinLengthLabel.Name = "PinLengthLabel";
+            PinLengthLabel.Size = new Size(153, 30);
+            PinLengthLabel.TabIndex = 5;
+            PinLengthLabel.Text = "PIN Length :";
             // 
             // PassLengthLabel
             // 
@@ -137,6 +138,7 @@
             // OutputPanel
             // 
             OutputPanel.BorderStyle = BorderStyle.FixedSingle;
+            OutputPanel.Controls.Add(RequestResponseLabel);
             OutputPanel.Controls.Add(OutputLabel);
             OutputPanel.Dock = DockStyle.Bottom;
             OutputPanel.Location = new Point(0, 409);
@@ -148,11 +150,22 @@
             // 
             OutputLabel.AutoSize = true;
             OutputLabel.Font = new Font("Century Gothic", 10F, FontStyle.Underline, GraphicsUnit.Point);
-            OutputLabel.Location = new Point(467, 0);
+            OutputLabel.Location = new Point(441, 0);
             OutputLabel.Name = "OutputLabel";
             OutputLabel.Size = new Size(81, 23);
             OutputLabel.TabIndex = 0;
             OutputLabel.Text = "OUTPUT";
+            // 
+            // RequestResponseLabel
+            // 
+            RequestResponseLabel.AutoSize = true;
+            RequestResponseLabel.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            RequestResponseLabel.Location = new Point(377, 76);
+            RequestResponseLabel.Name = "RequestResponseLabel";
+            RequestResponseLabel.Size = new Size(222, 28);
+            RequestResponseLabel.TabIndex = 1;
+            RequestResponseLabel.Text = "Request Response";
+            RequestResponseLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // GeneratorForm
             // 
@@ -185,8 +198,9 @@
         private Label PassLengthLabel;
         private NumericUpDown PinLengthPicker;
         private NumericUpDown PasswordLengthPicker;
-        private Label PinLabel;
+        private Label PinLengthLabel;
         private Button RequestButton;
         private Label OutputLabel;
+        private Label RequestResponseLabel;
     }
 }
