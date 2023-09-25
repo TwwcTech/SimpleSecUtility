@@ -14,5 +14,7 @@
             "To continue with the app, a 'Master Password' must be created\n" +
             "to ensure only the active user account\n" +
             $"({Environment.UserName}) has access to the 'File Encryption' tool.";
+
+        public const string SpecialCharacters = "!@$%?";
     }
 }
