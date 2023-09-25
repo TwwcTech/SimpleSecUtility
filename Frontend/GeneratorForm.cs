@@ -1,4 +1,6 @@
-﻿namespace SimpleSecUtility.Frontend
+﻿using SimpleSecUtility.Backend.SecureGenerator;
+
+namespace SimpleSecUtility.Frontend
 {
     public partial class GeneratorForm : Form
     {
@@ -9,7 +11,6 @@
 
         private void GeneratorForm_Load(object sender, EventArgs e)
         {
-            // Code goes here
             PasswordLengthPicker.Enabled = false;
             PinLengthPicker.Enabled = false;
         }
@@ -21,6 +22,7 @@
                 PasswordLengthPicker.Enabled = true;
 
                 PinCheckbox.Enabled = false;
+                PinLengthLabel.Enabled = false;
                 PinLengthPicker.Enabled = false;
             }
             else if (!PasswordCheckbox.Checked)
@@ -38,6 +40,7 @@
                 PinLengthPicker.Enabled = true;
 
                 PasswordCheckbox.Enabled = false;
+                PassLengthLabel.Enabled = false;
                 PasswordLengthPicker.Enabled = false;
             }
             else if (!PinCheckbox.Checked)
@@ -84,10 +87,26 @@
             }
         }
 
-        private void RequestButton_Click(object sender, EventArgs e)
+        private async void RequestButton_Click(object sender, EventArgs e)
         {
-            // Code goes here
-            MessageBox.Show("test");
+            if (!PasswordCheckbox.Checked && !PinCheckbox.Checked)
+            {
+                MessageBox.Show("An option must be checked, please select an option above", "Request Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (PasswordCheckbox.Checked)
+            {
+                string securePassword = await PassPin.ReturnSecurePasswordOrPIN("password", (int)PasswordLengthPicker.Value);
+                RequestResponseLabel.Text = securePassword;
+                RequestResponseLabel.BorderStyle = BorderStyle.FixedSingle;
+                RequestResponseLabel.Focus();
+            }
+            else if (PinCheckbox.Checked)
+            {
+                string securePIN = await PassPin.ReturnSecurePasswordOrPIN("pin", (int)PinLengthPicker.Value);
+                RequestResponseLabel.Text = securePIN;
+                RequestResponseLabel.BorderStyle = BorderStyle.FixedSingle;
+                RequestResponseLabel.Focus();
+            }
         }
     }
 }
