@@ -25,11 +25,13 @@ namespace SimpleSecUtility.Backend.SecureGenerator
 
                     case "password":
                         apiUrl = $"https://www.random.org/strings/?num=1&len={requestLength}&digits=on&upperalpha=on&loweralpha=on&unique=on&format=plain&rnd=new";
+                        //string apiKey = RegistryReader.ReadApiKey("apikey");
                         //string requestPasswordBody = $"{{\"jsonrpc\": \"2.0\", \"method\": \"generateStrings\", \"params\": {{ \"apiKey\": \"{}\", \"n\": 1, \"length\": {requestLength}, \"characters\": \"abcdefghijklmnopqrstuvwxyz1234567890!@#$%&\", \"replacement\": true}}, \"id\": 20251}}";
                         break;
                     case "pin":
-                        // add the if branch for pin length: if (pinLength == 4) else if (pinLength > 4)
                         apiUrl = $"https://www.random.org/strings/?num=1&len={requestLength}&digits=on&unique=on&format=plain&rnd=new";
+                        //string apiKey = RegistryReader.ReadApiKey("apikey");
+                        // add the if branch for pin length: if (pinLength == 4) else if (pinLength > 4)
                         //string requestPinBody = $"{{\"jsonrpc\": \"2.0\", \"method\": \"generateStrings\", \"params\": {{ \"apiKey\": \"{}\", \"n\": 1, \"length\": {requestLength}, \"characters\": \"1234567890\", \"replacement\": true}}, \"id\": 20251}}";
                         //string requestPinBody = $"{{\"jsonrpc\": \"2.0\", \"method\": \"generateStrings\", \"params\": {{ \"apiKey\": \"{}\", \"n\": 1, \"length\": {requestLength}, \"characters\": \"1234567890!@#$%&+-()_=\", \"replacement\": true}}, \"id\": 20251}}";
                         break;
