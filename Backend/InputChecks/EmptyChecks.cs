@@ -52,7 +52,7 @@
 
                 foreach (NumericUpDown numericBox in numericboxes)
                 {
-                    if (!string.IsNullOrWhiteSpace(numericBox.Value.ToString()) && (int)numericBox.Value != 0)
+                    if ((int)numericBox.Value != 0)
                     {
                         emptyNumericBoxes--;
                     }
