@@ -28,8 +28,8 @@ namespace SimpleSecUtility.Frontend
             else if (!PasswordCheckbox.Checked)
             {
                 PasswordLengthPicker.Enabled = false;
-
                 PinCheckbox.Enabled = true;
+                RequestResponseLabel.Text = string.Empty;
             }
         }
 
@@ -46,25 +46,25 @@ namespace SimpleSecUtility.Frontend
             else if (!PinCheckbox.Checked)
             {
                 PinLengthPicker.Enabled = false;
-
                 PasswordCheckbox.Enabled = true;
+                RequestResponseLabel.Text = string.Empty;
             }
         }
 
         private void PasswordLengthPicker_ValueChanged(object sender, EventArgs e)
         {
-            if (PasswordLengthPicker.Value < 8)
+            if (PasswordLengthPicker.Value < 8 || PasswordLengthPicker.Value > 25)
             {
-                MessageBox.Show("Password must be a minumum length of 8", "Password Length Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Password must be a minumum length of 8 and no greater than 25", "Password Length Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 PasswordLengthPicker.Focus();
             }
         }
 
         private void PasswordLengthPicker_Leave(object sender, EventArgs e)
         {
-            if (PasswordLengthPicker.Value < 8)
+            if (PasswordLengthPicker.Value < 8 || PasswordLengthPicker.Value > 25)
             {
-                MessageBox.Show("Password must be a minumum length of 8", "Password Length Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Password must be a minumum length of 8 and no greater than 25", "Password Length Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 PasswordLengthPicker.Focus();
             }
         }

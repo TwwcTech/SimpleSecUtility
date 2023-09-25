@@ -37,8 +37,8 @@
             PinCheckbox = new CheckBox();
             PasswordCheckbox = new CheckBox();
             OutputPanel = new Panel();
-            OutputLabel = new Label();
             RequestResponseLabel = new Label();
+            OutputLabel = new Label();
             ControlsPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)PinLengthPicker).BeginInit();
             ((System.ComponentModel.ISupportInitialize)PasswordLengthPicker).BeginInit();
@@ -146,6 +146,16 @@
             OutputPanel.Size = new Size(1005, 198);
             OutputPanel.TabIndex = 1;
             // 
+            // RequestResponseLabel
+            // 
+            RequestResponseLabel.AutoSize = true;
+            RequestResponseLabel.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            RequestResponseLabel.Location = new Point(368, 89);
+            RequestResponseLabel.Name = "RequestResponseLabel";
+            RequestResponseLabel.Size = new Size(0, 28);
+            RequestResponseLabel.TabIndex = 1;
+            RequestResponseLabel.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // OutputLabel
             // 
             OutputLabel.AutoSize = true;
@@ -155,17 +165,6 @@
             OutputLabel.Size = new Size(81, 23);
             OutputLabel.TabIndex = 0;
             OutputLabel.Text = "OUTPUT";
-            // 
-            // RequestResponseLabel
-            // 
-            RequestResponseLabel.AutoSize = true;
-            RequestResponseLabel.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            RequestResponseLabel.Location = new Point(377, 76);
-            RequestResponseLabel.Name = "RequestResponseLabel";
-            RequestResponseLabel.Size = new Size(222, 28);
-            RequestResponseLabel.TabIndex = 1;
-            RequestResponseLabel.Text = "Request Response";
-            RequestResponseLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // GeneratorForm
             // 
