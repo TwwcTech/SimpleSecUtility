@@ -18,14 +18,7 @@ namespace SimpleSecUtility.Backend.SecureGenerator
                         apiUrl = $"https://www.random.org/strings/?num=1&len={requestLength}&digits=on&upperalpha=on&loweralpha=on&unique=on&format=plain&rnd=new";
                         break;
                     case "pin":
-                        if (requestLength == _defaultPINLength)
-                        {
-                            apiUrl = $"https://www.random.org/strings/?num=1&len={requestLength}&digits=on&format=plain&rnd=new";
-                        }
-                        else if (requestLength > _defaultPINLength)
-                        {
-                            apiUrl = $"https://www.random.org/strings/?num=1&len={requestLength}&digits=on&unique=on&format=plain&rnd=new";
-                        }
+                        apiUrl = $"https://www.random.org/strings/?num=1&len={requestLength}&digits=on&unique=on&format=plain&rnd=new";
                         break;
                     default:
                         throw new ArgumentException("Not an option, please select from: [password, pin]");
