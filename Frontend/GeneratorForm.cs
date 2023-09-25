@@ -1,4 +1,5 @@
-﻿using SimpleSecUtility.Backend.InputChecks;
+﻿using SimpleSecUtility.AppResources;
+using SimpleSecUtility.Backend.InputChecks;
 using SimpleSecUtility.Backend.SecureGenerator;
 
 namespace SimpleSecUtility.Frontend
@@ -83,7 +84,7 @@ namespace SimpleSecUtility.Frontend
                 if (!isPasswordLengthPickerEmptyorZero)
                 {
                     string securePassword = await PassPin.ReturnSecurePasswordOrPIN("password", (int)PasswordLengthPicker.Value);
-                    RequestResponseLabel.Text = securePassword;
+                    RequestResponseLabel.Text = securePassword.Replace(securePassword[new Random().Next(0, securePassword.Length)], Statics.SpecialCharacters[new Random().Next(0, Statics.SpecialCharacters.Length)]);
                     RequestResponseLabel.Location = new Point((OutputPanel.Width - RequestResponseLabel.Width) / 2, (OutputPanel.Height - RequestResponseLabel.Height) / 2);
                     RequestResponseLabel.BorderStyle = BorderStyle.FixedSingle;
                     RequestResponseLabel.Focus();
@@ -100,7 +101,14 @@ namespace SimpleSecUtility.Frontend
                 if (!isPinLengthCheckerEmptyorZero)
                 {
                     string securePIN = await PassPin.ReturnSecurePasswordOrPIN("pin", (int)PinLengthPicker.Value);
-                    RequestResponseLabel.Text = securePIN;
+                    if (securePIN.Length > 4)
+                    {
+                        RequestResponseLabel.Text = securePIN.Replace(securePIN[new Random().Next(0, securePIN.Length)], Statics.SpecialCharacters[new Random().Next(0, Statics.SpecialCharacters.Length)]);
+                    }
+                    else
+                    {
+                        RequestResponseLabel.Text = securePIN;
+                    }
                     RequestResponseLabel.Location = new Point((OutputPanel.Width - RequestResponseLabel.Width) / 2, (OutputPanel.Height - RequestResponseLabel.Height) / 2);
                     RequestResponseLabel.BorderStyle = BorderStyle.FixedSingle;
                     RequestResponseLabel.Focus();
