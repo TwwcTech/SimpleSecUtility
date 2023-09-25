@@ -63,7 +63,7 @@
             // RequestButton
             // 
             RequestButton.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            RequestButton.Location = new Point(400, 264);
+            RequestButton.Location = new Point(424, 264);
             RequestButton.Name = "RequestButton";
             RequestButton.Size = new Size(154, 57);
             RequestButton.TabIndex = 6;
@@ -160,7 +160,7 @@
             // 
             OutputLabel.AutoSize = true;
             OutputLabel.Font = new Font("Century Gothic", 10F, FontStyle.Underline, GraphicsUnit.Point);
-            OutputLabel.Location = new Point(441, 0);
+            OutputLabel.Location = new Point(462, 0);
             OutputLabel.Name = "OutputLabel";
             OutputLabel.Size = new Size(81, 23);
             OutputLabel.TabIndex = 0;
