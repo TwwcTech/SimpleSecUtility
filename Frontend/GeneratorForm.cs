@@ -110,5 +110,10 @@ namespace SimpleSecUtility.Frontend
                 RequestResponseLabel.Focus();
             }
         }
+
+        private void copyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(RequestResponseLabel.Text);
+        }
     }
 }
