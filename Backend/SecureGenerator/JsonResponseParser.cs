@@ -2,24 +2,24 @@
 {
     internal class JsonResponseParser
     {
-        string? jsonrpc { get; set; }
-        Result? result { get; set; }
-        int id { get; set; }
+        public string? jsonrpc { get; set; }
+        public Result? result { get; set; }
+        public int id { get; set; }
     }
 
     public class Result
     {
-        Random? random { get; set; }
-        int bitsUsed { get; set; }
-        long bitsLeft { get; set; }
-        long requestsLeft { get; set; }
-        int advisoryDelay { get; set; }
+        public RandomData? random { get; set; }
+        public int bitsUsed { get; set; }
+        public long bitsLeft { get; set; }
+        public long requestsLeft { get; set; }
+        public int advisoryDelay { get; set; }
 
     }
 
-    public class Random
+    public class RandomData
     {
-        string? data { get; set; }
-        string? completionTime { get; set; }
+        public string? data { get; set; }
+        public string? completionTime { get; set; }
     }
 }
