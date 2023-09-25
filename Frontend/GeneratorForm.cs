@@ -53,11 +53,11 @@ namespace SimpleSecUtility.Frontend
 
         private void PasswordLengthPicker_ValueChanged(object sender, EventArgs e)
         {
-            if (PasswordLengthPicker.Value < 8 || PasswordLengthPicker.Value > 25)
-            {
-                MessageBox.Show("Password must be a minumum length of 8 and no greater than 25", "Password Length Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                PasswordLengthPicker.Focus();
-            }
+            //if (PasswordLengthPicker.Value < 8 || PasswordLengthPicker.Value > 25)
+            //{
+            //    MessageBox.Show("Password must be a minumum length of 8 and no greater than 25", "Password Length Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    PasswordLengthPicker.Focus();
+            //}
         }
 
         private void PasswordLengthPicker_Leave(object sender, EventArgs e)
@@ -71,11 +71,11 @@ namespace SimpleSecUtility.Frontend
 
         private void PinLengthPicker_ValueChanged(object sender, EventArgs e)
         {
-            if (PinLengthPicker.Value < 4 || PinLengthPicker.Value > 6)
-            {
-                MessageBox.Show("PIN must be a minimum length of 4 and no greater than 6", "PIN Length Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                PinLengthPicker.Focus();
-            }
+            //if (PinLengthPicker.Value < 4 || PinLengthPicker.Value > 6)
+            //{
+            //    MessageBox.Show("PIN must be a minimum length of 4 and no greater than 6", "PIN Length Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    PinLengthPicker.Focus();
+            //}
         }
 
         private void PinLengthPicker_Leave(object sender, EventArgs e)
