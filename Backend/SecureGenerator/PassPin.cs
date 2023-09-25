@@ -1,5 +1,4 @@
-﻿using Newtonsoft.Json;
-using SimpleSecUtility.Backend.AppRegistry;
+﻿using SimpleSecUtility.Backend.AppRegistry;
 
 namespace SimpleSecUtility.Backend.SecureGenerator
 {
@@ -29,7 +28,7 @@ namespace SimpleSecUtility.Backend.SecureGenerator
                 if (!string.IsNullOrEmpty(apiKey))
                 {
                     try
-                {
+                    {
                         requestClient.DefaultRequestHeaders.Add("X-RandomOrg-ApiKey", apiKey);
                         HttpResponseMessage response = await requestClient.GetAsync(apiUrl);
 
@@ -42,7 +41,7 @@ namespace SimpleSecUtility.Backend.SecureGenerator
                             MessageBox.Show($"Unable to connect to RandomData.Org, Status Code: {response.StatusCode}", "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
-                catch (Exception ex) { ex.ToString(); }
+                    catch (Exception ex) { ex.ToString(); }
                 }
                 else
                 {
