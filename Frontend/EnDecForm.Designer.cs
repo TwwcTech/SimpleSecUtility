@@ -28,22 +28,38 @@
         /// </summary>
         private void InitializeComponent()
         {
+            fileOpener = new OpenFileDialog();
+            fileSaver = new SaveFileDialog();
             SuspendLayout();
+            // 
+            // fileOpener
+            // 
+            fileOpener.FileName = "fileOpener";
+            fileOpener.Filter = "All files | *.*";
+            fileOpener.Title = "Select a file to Encrypt";
+            // 
+            // fileSaver
+            // 
+            fileSaver.Filter = "All files | *.*";
+            fileSaver.Title = "Save Encrypted File";
             // 
             // EnDecForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1025, 660);
             FormBorderStyle = FormBorderStyle.Fixed3D;
             MaximizeBox = false;
             Name = "EnDecForm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "EnDecForm";
+            Text = "Encryption / Decryption";
             Load += EnDecForm_Load;
             ResumeLayout(false);
         }
 
         #endregion
+
+        private OpenFileDialog fileOpener;
+        private SaveFileDialog fileSaver;
     }
 }
