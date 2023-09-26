@@ -97,8 +97,8 @@ namespace SimpleSecUtility.Frontend
             else if (PinCheckbox.Checked)
             {
                 NumericUpDown[] pinLengthPicker = new NumericUpDown[] { PinLengthPicker };
-                bool isPinLengthCheckerEmptyorZero = EmptyChecks.Instance.AreNumericBoxInputsEmpty(pinLengthPicker);
-                if (!isPinLengthCheckerEmptyorZero)
+                bool isPinLengthCheckerEmptyOrZero = EmptyChecks.Instance.AreNumericBoxInputsEmpty(pinLengthPicker);
+                if (!isPinLengthCheckerEmptyOrZero)
                 {
                     string securePIN = await PassPin.ReturnSecurePasswordOrPIN("pin", (int)PinLengthPicker.Value);
                     if (securePIN.Length > 4)
