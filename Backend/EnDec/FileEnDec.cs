@@ -1,4 +1,6 @@
-﻿namespace SimpleSecUtility.Backend.EnDec
+﻿using System.Diagnostics;
+
+namespace SimpleSecUtility.Backend.EnDec
 {
     internal class FileEnDec
     {
