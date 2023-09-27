@@ -1,4 +1,6 @@
-﻿namespace SimpleSecUtility.Frontend
+﻿using SimpleSecUtility.Backend.EnDec;
+
+namespace SimpleSecUtility.Frontend
 {
     public partial class EnDecForm : Form
     {
@@ -12,14 +14,49 @@
 
         private void EnDecForm_Load(object sender, EventArgs e)
         {
-            //    fileOpener = new OpenFileDialog();
-            //    fileOpener.Title = "Select a file to ecnrypt";
-            //    fileOpener.Filter = "All files | *.*";
-            //    fileOpener.InitialDirectory = @"C:\";
-            //    if (fileOpener.ShowDialog() == DialogResult.OK)
-            //    {
-            //        _fileToEncrypt = fileOpener.FileName;
-            //    }
+
+        }
+
+        private void encryptButton_Click(object sender, EventArgs e)
+        {
+            fileOpener = new OpenFileDialog();
+            fileOpener.Title = "Select a file to ecnrypt";
+            fileOpener.Filter = "All files | *.*";
+            fileOpener.InitialDirectory = @"C:\";
+            if (fileOpener.ShowDialog() == DialogResult.OK)
+            {
+                _fileToEncrypt = fileOpener.FileName;
+            }
+
+            if (!string.IsNullOrEmpty(_fileToEncrypt) )
+            {
+                // Encrypt code goes here
+            }
+            else
+            {
+                MessageBox.Show("No file to encrypt", "File Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
+
+        private void decryptButton_Click(object sender, EventArgs e)
+        {
+            fileOpener = new OpenFileDialog();
+            fileOpener.Title = "Select a file to decrypt";
+            fileOpener.Filter = "All files | *.*";
+            fileOpener.InitialDirectory = @"C:\";
+            if (fileOpener.ShowDialog() == DialogResult.OK)
+            {
+                _fileToDecrypt = fileOpener.FileName;
+            }
+
+            if (!string.IsNullOrEmpty(_fileToDecrypt))
+            {
+                // Decrypt code goes here
+            }
+            else
+            {
+                MessageBox.Show("No file to decrypt", "File Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
     }
 }
