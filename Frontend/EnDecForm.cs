@@ -14,7 +14,8 @@ namespace SimpleSecUtility.Frontend
 
         private void EnDecForm_Load(object sender, EventArgs e)
         {
-
+            // Enter correct password to continue
+            // Implement the logic
         }
 
         private void encryptButton_Click(object sender, EventArgs e)
@@ -30,7 +31,7 @@ namespace SimpleSecUtility.Frontend
 
             if (!string.IsNullOrEmpty(_fileToEncrypt) )
             {
-                // Encrypt code goes here
+                FileEnDec.EncryptFile(_fileToEncrypt);
             }
             else
             {
@@ -51,7 +52,7 @@ namespace SimpleSecUtility.Frontend
 
             if (!string.IsNullOrEmpty(_fileToDecrypt))
             {
-                // Decrypt code goes here
+                FileEnDec.DecryptFile(_fileToDecrypt);
             }
             else
             {
