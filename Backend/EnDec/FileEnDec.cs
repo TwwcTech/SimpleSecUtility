@@ -2,12 +2,12 @@
 {
     internal class FileEnDec
     {
-        public void EncryptFile()
+        public static void EncryptFile(string fileToEncrypt)
         {
             // Code goes here
         }
 
-        public void DecryptFile()
+        public static void DecryptFile(string fileToDecrypt)
         {
             // Code goes here
         }
