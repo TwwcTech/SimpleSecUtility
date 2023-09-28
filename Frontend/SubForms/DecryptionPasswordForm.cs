@@ -11,5 +11,10 @@
         {
             MessageBox.Show("A password will be require to encrypt the file", "Encryption Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        private void SubmitDecPassButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
