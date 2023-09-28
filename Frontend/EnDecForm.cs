@@ -12,10 +12,7 @@ namespace SimpleSecUtility.Frontend
         private void EnDecForm_Load(object sender, EventArgs e)
         {
             Form masterPassForm = new MasterPassForm();
-            if (masterPassForm.ShowDialog() == DialogResult.Cancel)
-            {
-                Close();
-            }
+            masterPassForm.ShowDialog();
         }
 
         private void encryptButton_Click(object sender, EventArgs e)

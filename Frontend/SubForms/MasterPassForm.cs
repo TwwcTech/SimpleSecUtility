@@ -26,7 +26,7 @@ namespace SimpleSecUtility.Frontend.SubForms
                 if (PasswordSecurityCheck.Instance!.IsPasswordSecure(masterPassTextbox.Text))
                 {
                     string hashedMasterPass = Hasher.Hash(masterPassTextbox.Text);
-                    if (hashedMasterPass == RegistryReader.ReadApiKey("master"))
+                    if (RegistryReader.ReadApiKey("master") != null)
                     {
                         Close();
                     }
@@ -36,11 +36,6 @@ namespace SimpleSecUtility.Frontend.SubForms
                     }
                 }
             }
-        }
-
-        private void CancelMasterButton_Click(object sender, EventArgs e)
-        {
-            Close();
         }
     }
 }
