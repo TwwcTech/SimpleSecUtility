@@ -13,6 +13,8 @@ namespace SimpleSecUtility.Frontend
 
         private void GeneratorForm_Load(object sender, EventArgs e)
         {
+            PassLengthLabel.Enabled = false;
+            PinLengthLabel.Enabled = false;
             PasswordLengthPicker.Enabled = false;
             PinLengthPicker.Enabled = false;
         }
