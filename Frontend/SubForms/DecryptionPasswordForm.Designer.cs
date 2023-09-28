@@ -28,12 +28,49 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "DecryptionPasswordForm";
+            components = new System.ComponentModel.Container();
+            DecryptionPassTextbox = new TextBox();
+            SubmitDecPassButton = new Button();
+            decToolTip = new ToolTip(components);
+            SuspendLayout();
+            // 
+            // DecryptionPassTextbox
+            // 
+            DecryptionPassTextbox.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            DecryptionPassTextbox.Location = new Point(174, 121);
+            DecryptionPassTextbox.Name = "DecryptionPassTextbox";
+            DecryptionPassTextbox.PasswordChar = '*';
+            DecryptionPassTextbox.PlaceholderText = "Enter password to decrypt the file";
+            DecryptionPassTextbox.Size = new Size(455, 37);
+            DecryptionPassTextbox.TabIndex = 0;
+            // 
+            // SubmitDecPassButton
+            // 
+            SubmitDecPassButton.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            SubmitDecPassButton.Location = new Point(330, 281);
+            SubmitDecPassButton.Name = "SubmitDecPassButton";
+            SubmitDecPassButton.Size = new Size(144, 49);
+            SubmitDecPassButton.TabIndex = 1;
+            SubmitDecPassButton.Text = "Submit";
+            SubmitDecPassButton.UseVisualStyleBackColor = true;
+            // 
+            // DecryptionPasswordForm
+            // 
+            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(SubmitDecPassButton);
+            Controls.Add(DecryptionPassTextbox);
+            Name = "DecryptionPasswordForm";
+            Text = "Decryption Password Prompt";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private TextBox DecryptionPassTextbox;
+        private Button SubmitDecPassButton;
+        private ToolTip decToolTip;
     }
 }
