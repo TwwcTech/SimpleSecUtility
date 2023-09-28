@@ -28,12 +28,50 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "MasterPassForm";
+            masterPassTextbox = new TextBox();
+            submitMasterPassButton = new Button();
+            SuspendLayout();
+            // 
+            // masterPassTextbox
+            // 
+            masterPassTextbox.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            masterPassTextbox.Location = new Point(174, 121);
+            masterPassTextbox.Name = "masterPassTextbox";
+            masterPassTextbox.PasswordChar = '*';
+            masterPassTextbox.PlaceholderText = "Enter Master Password";
+            masterPassTextbox.Size = new Size(455, 37);
+            masterPassTextbox.TabIndex = 0;
+            // 
+            // submitMasterPassButton
+            // 
+            submitMasterPassButton.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            submitMasterPassButton.Location = new Point(330, 281);
+            submitMasterPassButton.Name = "submitMasterPassButton";
+            submitMasterPassButton.Size = new Size(144, 49);
+            submitMasterPassButton.TabIndex = 1;
+            submitMasterPassButton.Text = "Submit";
+            submitMasterPassButton.UseVisualStyleBackColor = true;
+            // 
+            // MasterPassForm
+            // 
+            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(submitMasterPassButton);
+            Controls.Add(masterPassTextbox);
+            FormBorderStyle = FormBorderStyle.Fixed3D;
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "MasterPassForm";
+            Text = "Master Password Prompt";
+            Load += MasterPassForm_Load;
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private TextBox masterPassTextbox;
+        private Button submitMasterPassButton;
     }
 }
