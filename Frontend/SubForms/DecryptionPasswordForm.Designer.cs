@@ -63,6 +63,7 @@
             Controls.Add(DecryptionPassTextbox);
             Name = "DecryptionPasswordForm";
             Text = "Decryption Password Prompt";
+            Load += DecryptionPasswordForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }
