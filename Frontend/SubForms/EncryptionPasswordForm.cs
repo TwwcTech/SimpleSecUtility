@@ -1,4 +1,6 @@
-﻿namespace SimpleSecUtility.Frontend.SubForms
+﻿using SimpleSecUtility.Backend.InputChecks;
+
+namespace SimpleSecUtility.Frontend.SubForms
 {
     public partial class EncryptionPasswordForm : Form
     {
@@ -14,7 +16,16 @@
 
         private void SubmitEncPassButton_Click(object sender, EventArgs e)
         {
+            TextBox[] EncryptionTextbox = new TextBox[] { EncryptionPassTextbox };
+            bool isDecryptionTextboxEmpty = EmptyChecks.Instance.AreTextboxInputsEmpty(EncryptionTextbox);
 
+            if (!isDecryptionTextboxEmpty)
+            {
+                if (PasswordSecurityCheck.Instance!.IsPasswordSecure(EncryptionPassTextbox.Text))
+                {
+                    // Code goes here
+                }
+            }
         }
     }
 }
