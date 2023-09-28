@@ -11,8 +11,8 @@ namespace SimpleSecUtility.Frontend
 
         private void EnDecForm_Load(object sender, EventArgs e)
         {
-            // Enter master password to continue
-            // Implement the logic
+            Form masterPassForm = new MasterPassForm();
+            masterPassForm.ShowDialog();
         }
 
         private void encryptButton_Click(object sender, EventArgs e)
