@@ -1,20 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace SimpleSecUtility.Frontend.SubForms
+﻿namespace SimpleSecUtility.Frontend.SubForms
 {
     public partial class DecryptionPasswordForm : Form
     {
         public DecryptionPasswordForm()
         {
             InitializeComponent();
+        }
+
+        private void DecryptionPasswordForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
