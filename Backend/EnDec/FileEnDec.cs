@@ -56,7 +56,29 @@ namespace SimpleSecUtility.Backend.EnDec
                 saveFileDialog.Filter = "All files | *.*";
                 if (saveFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    // Decrypt method goes here
+                    using (FileStream inputStream = new(openFileDialog.FileName, FileMode.Open, FileAccess.Read))
+                    {
+                        using (FileStream outputStream = new(saveFileDialog.FileName, FileMode.Open, FileAccess.Write))
+                        {
+                            using (System.Security.Cryptography.Aes aes = System.Security.Cryptography.Aes.Create())
+                            {
+                                byte[] passwordBytes = Encoding.UTF8.GetBytes(password);
+                                using (ICryptoTransform decryptor = aes.CreateDecryptor(passwordBytes, _IV))
+                                {
+                                    using (CryptoStream cryptoStream = new(outputStream, decryptor, CryptoStreamMode.Write))
+                                    {
+                                        byte[] buffer = new byte[1024];
+                                        int byteRead;
+
+                                        while ((byteRead = cryptoStream.Read(buffer, 0, buffer.Length)) > 0)
+                                        {
+                                            cryptoStream.Write(buffer, 0, byteRead);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
