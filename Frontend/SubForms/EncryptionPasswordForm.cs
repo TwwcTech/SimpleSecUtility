@@ -12,7 +12,7 @@ namespace SimpleSecUtility.Frontend.SubForms
 
         private void EncryptionPasswordForm_Load(object sender, EventArgs e)
         {
-            MessageBox.Show("A password will be required to decrypt the file", "Decryption Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("A password will be required to encrypt the file", "Decryption Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
             ActiveControl = SubmitEncPassButton;
         }
 

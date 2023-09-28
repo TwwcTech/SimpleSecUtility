@@ -26,15 +26,15 @@ namespace SimpleSecUtility.Frontend.SubForms
                 if (PasswordSecurityCheck.Instance!.IsPasswordSecure(masterPassTextbox.Text))
                 {
                     string hashedMasterPass = Hasher.Hash(masterPassTextbox.Text);
-                    if (RegistryReader.ReadApiKey("master") != null)
+                    if (hashedMasterPass == RegistryReader.ReadApiKey("master"))
                     {
                         Close();
                     }
-                    else
-                    {
-                        MessageBox.Show("Incorrect Master Password", "Master Password Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
                 }
+            }
+            else
+            {
+                MessageBox.Show("Entry must not be empty", "Entry Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
