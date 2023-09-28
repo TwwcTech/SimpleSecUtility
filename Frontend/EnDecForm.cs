@@ -11,7 +11,7 @@ namespace SimpleSecUtility.Frontend
 
         private void EnDecForm_Load(object sender, EventArgs e)
         {
-            // Enter correct password to continue
+            // Enter master password to continue
             // Implement the logic
         }
 
