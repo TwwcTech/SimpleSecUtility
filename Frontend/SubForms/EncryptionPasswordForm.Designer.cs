@@ -63,6 +63,7 @@
             Controls.Add(EncryptionPassTextbox);
             Name = "EncryptionPasswordForm";
             Text = "Encryption Password Prompt";
+            Load += EncryptionPasswordForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }
