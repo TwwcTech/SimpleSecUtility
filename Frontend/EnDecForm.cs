@@ -1,4 +1,4 @@
-﻿using SimpleSecUtility.Backend.EnDec;
+﻿using SimpleSecUtility.Frontend.SubForms;
 
 namespace SimpleSecUtility.Frontend
 {
@@ -17,12 +17,14 @@ namespace SimpleSecUtility.Frontend
 
         private void encryptButton_Click(object sender, EventArgs e)
         {
-            // Open EncryptionPassForm
+            Form encryptionPassForm = new EncryptionPasswordForm();
+            encryptionPassForm.ShowDialog();
         }
 
         private void decryptButton_Click(object sender, EventArgs e)
         {
-            // Open DecryptionPassForm
+            Form decryptionPassForm = new DecryptionPasswordForm();
+            decryptionPassForm.ShowDialog();
         }
     }
 }

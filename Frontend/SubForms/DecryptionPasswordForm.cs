@@ -22,9 +22,9 @@ namespace SimpleSecUtility.Frontend.SubForms
 
             if (!isDecryptionTextboxEmpty)
             {
-                if(PasswordSecurityCheck.Instance!.IsPasswordSecure(DecryptionPassTextbox.Text))
+                if (PasswordSecurityCheck.Instance!.IsPasswordSecure(DecryptionPassTextbox.Text))
                 {
-                    FileEnDec.DecryptFile()
+                    FileEnDec.DecryptFile(DecryptionPassTextbox.Text);
                 }
             }
         }
