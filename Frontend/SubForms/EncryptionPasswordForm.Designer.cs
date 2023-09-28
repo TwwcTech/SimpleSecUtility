@@ -62,6 +62,9 @@
             ClientSize = new Size(800, 450);
             Controls.Add(SubmitEncPassButton);
             Controls.Add(EncryptionPassTextbox);
+            FormBorderStyle = FormBorderStyle.Fixed3D;
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "EncryptionPasswordForm";
             Text = "Encryption Password Prompt";
             Load += EncryptionPasswordForm_Load;

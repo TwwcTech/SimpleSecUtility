@@ -62,6 +62,9 @@
             ClientSize = new Size(800, 450);
             Controls.Add(SubmitDecPassButton);
             Controls.Add(DecryptionPassTextbox);
+            FormBorderStyle = FormBorderStyle.Fixed3D;
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "DecryptionPasswordForm";
             Text = "Decryption Password Prompt";
             Load += DecryptionPasswordForm_Load;
