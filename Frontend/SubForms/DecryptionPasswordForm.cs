@@ -26,10 +26,5 @@ namespace SimpleSecUtility.Frontend.SubForms
                 FileEnDec.DecryptFile(DecryptionPassTextbox.Text);
             }
         }
-
-        private void CancelDecButton_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
     }
 }
