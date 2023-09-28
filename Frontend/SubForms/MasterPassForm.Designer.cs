@@ -30,6 +30,7 @@
         {
             masterPassTextbox = new TextBox();
             submitMasterPassButton = new Button();
+            Cancel = new Button();
             SuspendLayout();
             // 
             // masterPassTextbox
@@ -45,7 +46,7 @@
             // submitMasterPassButton
             // 
             submitMasterPassButton.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            submitMasterPassButton.Location = new Point(330, 281);
+            submitMasterPassButton.Location = new Point(241, 277);
             submitMasterPassButton.Name = "submitMasterPassButton";
             submitMasterPassButton.Size = new Size(144, 49);
             submitMasterPassButton.TabIndex = 1;
@@ -53,11 +54,24 @@
             submitMasterPassButton.UseVisualStyleBackColor = true;
             submitMasterPassButton.Click += submitMasterPassButton_Click;
             // 
+            // Cancel
+            // 
+            Cancel.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            Cancel.Location = new Point(410, 277);
+            Cancel.Name = "Cancel";
+            Cancel.Size = new Size(144, 49);
+            Cancel.TabIndex = 2;
+            Cancel.Text = "Cancel";
+            Cancel.UseVisualStyleBackColor = true;
+            Cancel.Click += CancelMasterButton_Click;
+            // 
             // MasterPassForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            ControlBox = false;
+            Controls.Add(Cancel);
             Controls.Add(submitMasterPassButton);
             Controls.Add(masterPassTextbox);
             FormBorderStyle = FormBorderStyle.Fixed3D;
@@ -74,5 +88,6 @@
 
         private TextBox masterPassTextbox;
         private Button submitMasterPassButton;
+        private Button Cancel;
     }
 }
