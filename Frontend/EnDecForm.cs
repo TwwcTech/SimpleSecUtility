@@ -31,7 +31,7 @@ namespace SimpleSecUtility.Frontend
 
             if (!string.IsNullOrEmpty(_fileToEncrypt) )
             {
-                FileEnDec.EncryptFile(_fileToEncrypt);
+                //FileEnDec.EncryptFile(_fileToEncrypt);
             }
             else
             {
@@ -52,7 +52,7 @@ namespace SimpleSecUtility.Frontend
 
             if (!string.IsNullOrEmpty(_fileToDecrypt))
             {
-                FileEnDec.DecryptFile(_fileToDecrypt);
+                //FileEnDec.DecryptFile(_fileToDecrypt);
             }
             else
             {
