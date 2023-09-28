@@ -13,6 +13,7 @@ namespace SimpleSecUtility.Frontend.SubForms
         private void DecryptionPasswordForm_Load(object sender, EventArgs e)
         {
             MessageBox.Show("A password will be require to encrypt the file", "Encryption Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            ActiveControl = SubmitDecPassButton;
         }
 
         private void SubmitDecPassButton_Click(object sender, EventArgs e)
@@ -24,6 +25,11 @@ namespace SimpleSecUtility.Frontend.SubForms
             {
                 FileEnDec.DecryptFile(DecryptionPassTextbox.Text);
             }
+        }
+
+        private void CancelDecButton_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
