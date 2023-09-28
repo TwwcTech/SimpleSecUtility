@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EnDecForm));
-            fileOpener = new OpenFileDialog();
-            fileSaver = new SaveFileDialog();
             encryptButton = new Button();
             decryptButton = new Button();
             encryptPanel = new Panel();
@@ -38,17 +36,6 @@
             encryptPanel.SuspendLayout();
             decryptPanel.SuspendLayout();
             SuspendLayout();
-            // 
-            // fileOpener
-            // 
-            fileOpener.FileName = "fileOpener";
-            fileOpener.Filter = "All files | *.*";
-            fileOpener.Title = "Select a file to Encrypt";
-            // 
-            // fileSaver
-            // 
-            fileSaver.Filter = "All files | *.*";
-            fileSaver.Title = "Save Encrypted File";
             // 
             // encryptButton
             // 
@@ -117,9 +104,6 @@
         }
 
         #endregion
-
-        private OpenFileDialog fileOpener;
-        private SaveFileDialog fileSaver;
         private Button encryptButton;
         private Button decryptButton;
         private Panel encryptPanel;
