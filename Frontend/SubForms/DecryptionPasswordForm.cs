@@ -1,4 +1,5 @@
-﻿using SimpleSecUtility.Backend.InputChecks;
+﻿using SimpleSecUtility.Backend.EnDec;
+using SimpleSecUtility.Backend.InputChecks;
 
 namespace SimpleSecUtility.Frontend.SubForms
 {
@@ -23,7 +24,7 @@ namespace SimpleSecUtility.Frontend.SubForms
             {
                 if(PasswordSecurityCheck.Instance!.IsPasswordSecure(DecryptionPassTextbox.Text))
                 {
-                    // Code goes here
+                    FileEnDec.DecryptFile()
                 }
             }
         }

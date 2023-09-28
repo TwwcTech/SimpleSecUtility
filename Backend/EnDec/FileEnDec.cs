@@ -7,13 +7,15 @@ namespace SimpleSecUtility.Backend.EnDec
     {
         private static readonly byte[] _IV = Encoding.UTF8.GetBytes("1234567890");
 
-        public static void EncryptFile(OpenFileDialog openFileDialog, SaveFileDialog saveFileDialog, string password)
+        public static void EncryptFile(string password)
         {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Title = "Select a file to ecnrypt";
             openFileDialog.Filter = "All files | *.*";
             openFileDialog.InitialDirectory = @"C:\";
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
                 saveFileDialog.Title = "Select a Destination for Encrypted File";
                 saveFileDialog.Filter = "Encrypted files | (*.enc)|*.enc*";
                 if (saveFileDialog.ShowDialog() == DialogResult.OK)
@@ -45,13 +47,15 @@ namespace SimpleSecUtility.Backend.EnDec
             }
         }
 
-        public static void DecryptFile(OpenFileDialog openFileDialog, SaveFileDialog saveFileDialog, string password)
+        public static void DecryptFile(string password)
         {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Title = "Select a File to Decrypt";
             openFileDialog.Filter = "Encrypted files | (*.enc)|*.enc*";
             openFileDialog.InitialDirectory = @"C:\";
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
                 saveFileDialog.Title = "Select a Destination for Decrypted File";
                 saveFileDialog.Filter = "All files | *.*";
                 if (saveFileDialog.ShowDialog() == DialogResult.OK)
