@@ -20,6 +20,7 @@ namespace SimpleSecUtility.Frontend
 
         private void encryptButton_Click(object sender, EventArgs e)
         {
+            FileEnDec.EncryptFile(fileOpener, fileSaver, _fileToEncrypt!, "password1234");
             fileOpener = new OpenFileDialog();
             fileOpener.Title = "Select a file to ecnrypt";
             fileOpener.Filter = "All files | *.*";
