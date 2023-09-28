@@ -79,6 +79,7 @@
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "EncryptionPasswordForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Encryption Password Prompt";
             Load += EncryptionPasswordForm_Load;
             ResumeLayout(false);

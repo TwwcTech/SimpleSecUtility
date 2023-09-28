@@ -79,6 +79,7 @@
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "DecryptionPasswordForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Decryption Password Prompt";
             Load += DecryptionPasswordForm_Load;
             ResumeLayout(false);
