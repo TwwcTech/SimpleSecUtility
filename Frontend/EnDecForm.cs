@@ -17,12 +17,12 @@ namespace SimpleSecUtility.Frontend
 
         private void encryptButton_Click(object sender, EventArgs e)
         {
-            FileEnDec.EncryptFile(fileOpener, fileSaver, "");
+            // Open EncryptionPassForm
         }
 
         private void decryptButton_Click(object sender, EventArgs e)
         {
-            FileEnDec.DecryptFile(fileOpener, fileSaver, "");
+            // Open DecryptionPassForm
         }
     }
 }
