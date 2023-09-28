@@ -13,7 +13,7 @@ namespace SimpleSecUtility.Frontend.SubForms
 
         private void MasterPassForm_Load(object sender, EventArgs e)
         {
-
+            ActiveControl = submitMasterPassButton;
         }
 
         private void submitMasterPassButton_Click(object sender, EventArgs e)
@@ -21,7 +21,7 @@ namespace SimpleSecUtility.Frontend.SubForms
             TextBox[] masterPasswordTextbox = new TextBox[] { masterPassTextbox };
             bool isMasterPasswordTextboxEmpty = EmptyChecks.Instance.AreTextboxInputsEmpty(masterPasswordTextbox);
 
-            if (!isMasterPasswordTextboxEmpty )
+            if (!isMasterPasswordTextboxEmpty)
             {
                 if (PasswordSecurityCheck.Instance!.IsPasswordSecure(masterPassTextbox.Text))
                 {
@@ -36,6 +36,11 @@ namespace SimpleSecUtility.Frontend.SubForms
                     }
                 }
             }
+        }
+
+        private void CancelMasterButton_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
