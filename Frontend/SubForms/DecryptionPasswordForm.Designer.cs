@@ -53,6 +53,7 @@
             SubmitDecPassButton.TabIndex = 1;
             SubmitDecPassButton.Text = "Submit";
             SubmitDecPassButton.UseVisualStyleBackColor = true;
+            SubmitDecPassButton.Click += SubmitDecPassButton_Click;
             // 
             // DecryptionPasswordForm
             // 

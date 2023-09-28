@@ -53,6 +53,7 @@
             SubmitEncPassButton.TabIndex = 1;
             SubmitEncPassButton.Text = "Submit";
             SubmitEncPassButton.UseVisualStyleBackColor = true;
+            SubmitEncPassButton.Click += SubmitEncPassButton_Click;
             // 
             // EncryptionPasswordForm
             // 
