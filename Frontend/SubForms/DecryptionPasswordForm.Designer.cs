@@ -32,7 +32,6 @@
             DecryptionPassTextbox = new TextBox();
             SubmitDecPassButton = new Button();
             decToolTip = new ToolTip(components);
-            CancelDecButton = new Button();
             SuspendLayout();
             // 
             // DecryptionPassTextbox
@@ -48,7 +47,7 @@
             // SubmitDecPassButton
             // 
             SubmitDecPassButton.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            SubmitDecPassButton.Location = new Point(241, 277);
+            SubmitDecPassButton.Location = new Point(315, 284);
             SubmitDecPassButton.Name = "SubmitDecPassButton";
             SubmitDecPassButton.Size = new Size(144, 49);
             SubmitDecPassButton.TabIndex = 1;
@@ -56,23 +55,11 @@
             SubmitDecPassButton.UseVisualStyleBackColor = true;
             SubmitDecPassButton.Click += SubmitDecPassButton_Click;
             // 
-            // CancelDecButton
-            // 
-            CancelDecButton.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            CancelDecButton.Location = new Point(410, 277);
-            CancelDecButton.Name = "CancelDecButton";
-            CancelDecButton.Size = new Size(144, 49);
-            CancelDecButton.TabIndex = 2;
-            CancelDecButton.Text = "Cancel";
-            CancelDecButton.UseVisualStyleBackColor = true;
-            CancelDecButton.Click += CancelDecButton_Click;
-            // 
             // DecryptionPasswordForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(CancelDecButton);
             Controls.Add(SubmitDecPassButton);
             Controls.Add(DecryptionPassTextbox);
             FormBorderStyle = FormBorderStyle.Fixed3D;
@@ -91,6 +78,5 @@
         private TextBox DecryptionPassTextbox;
         private Button SubmitDecPassButton;
         private ToolTip decToolTip;
-        private Button CancelDecButton;
     }
 }

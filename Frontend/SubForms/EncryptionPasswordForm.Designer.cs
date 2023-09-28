@@ -32,7 +32,6 @@
             EncryptionPassTextbox = new TextBox();
             SubmitEncPassButton = new Button();
             encToolTip = new ToolTip(components);
-            Cancel = new Button();
             SuspendLayout();
             // 
             // EncryptionPassTextbox
@@ -48,7 +47,7 @@
             // SubmitEncPassButton
             // 
             SubmitEncPassButton.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            SubmitEncPassButton.Location = new Point(241, 277);
+            SubmitEncPassButton.Location = new Point(315, 284);
             SubmitEncPassButton.Name = "SubmitEncPassButton";
             SubmitEncPassButton.Size = new Size(144, 49);
             SubmitEncPassButton.TabIndex = 1;
@@ -56,23 +55,11 @@
             SubmitEncPassButton.UseVisualStyleBackColor = true;
             SubmitEncPassButton.Click += SubmitEncPassButton_Click;
             // 
-            // Cancel
-            // 
-            Cancel.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            Cancel.Location = new Point(410, 277);
-            Cancel.Name = "Cancel";
-            Cancel.Size = new Size(144, 49);
-            Cancel.TabIndex = 2;
-            Cancel.Text = "Cancel";
-            Cancel.UseVisualStyleBackColor = true;
-            Cancel.Click += Cancel_Click;
-            // 
             // EncryptionPasswordForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(Cancel);
             Controls.Add(SubmitEncPassButton);
             Controls.Add(EncryptionPassTextbox);
             FormBorderStyle = FormBorderStyle.Fixed3D;
@@ -91,6 +78,5 @@
         private TextBox EncryptionPassTextbox;
         private Button SubmitEncPassButton;
         private ToolTip encToolTip;
-        private Button Cancel;
     }
 }
