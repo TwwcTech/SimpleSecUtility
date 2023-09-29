@@ -5,7 +5,7 @@ namespace SimpleSecUtility.Backend.EnDec
 {
     internal class FileEnDec
     {
-        private static readonly byte[] _IV = Encoding.UTF8.GetBytes("1234567890");
+        private static readonly byte[] _IV = Encoding.UTF8.GetBytes("7418529630753951");
 
         public static void EncryptFile(string password)
         {
@@ -17,7 +17,7 @@ namespace SimpleSecUtility.Backend.EnDec
             {
                 SaveFileDialog saveFileDialog = new SaveFileDialog();
                 saveFileDialog.Title = "Select a Destination for Encrypted File";
-                saveFileDialog.Filter = "Encrypted files | (*.enc)|*.enc*";
+                saveFileDialog.Filter = "Encrypted files |*.enc*";
                 if (saveFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     using (FileStream inputSream = new(openFileDialog.FileName, FileMode.Open, FileAccess.Read))
@@ -51,7 +51,7 @@ namespace SimpleSecUtility.Backend.EnDec
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Title = "Select a File to Decrypt";
-            openFileDialog.Filter = "Encrypted files | (*.enc)|*.enc*";
+            openFileDialog.Filter = "Encrypted files |*.enc*";
             openFileDialog.InitialDirectory = @"C:\";
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
@@ -62,7 +62,7 @@ namespace SimpleSecUtility.Backend.EnDec
                 {
                     using (FileStream inputStream = new(openFileDialog.FileName, FileMode.Open, FileAccess.Read))
                     {
-                        using (FileStream outputStream = new(saveFileDialog.FileName, FileMode.Open, FileAccess.Write))
+                        using (FileStream outputStream = new(saveFileDialog.FileName, FileMode.Create, FileAccess.Write))
                         {
                             using (System.Security.Cryptography.Aes aes = System.Security.Cryptography.Aes.Create())
                             {
@@ -74,7 +74,7 @@ namespace SimpleSecUtility.Backend.EnDec
                                         byte[] buffer = new byte[1024];
                                         int byteRead;
 
-                                        while ((byteRead = cryptoStream.Read(buffer, 0, buffer.Length)) > 0)
+                                        while ((byteRead = inputStream.Read(buffer, 0, buffer.Length)) > 0)
                                         {
                                             cryptoStream.Write(buffer, 0, byteRead);
                                         }
