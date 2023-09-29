@@ -17,7 +17,7 @@ namespace SimpleSecUtility.Backend.EnDec
             {
                 SaveFileDialog saveFileDialog = new SaveFileDialog();
                 saveFileDialog.Title = "Select a Destination for Encrypted File";
-                saveFileDialog.Filter = "Encrypted files |*.enc*";
+                saveFileDialog.Filter = "Encrypted files |*.twwcts*";
                 if (saveFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     using (FileStream inputSream = new(openFileDialog.FileName, FileMode.Open, FileAccess.Read))
@@ -51,7 +51,7 @@ namespace SimpleSecUtility.Backend.EnDec
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Title = "Select a File to Decrypt";
-            openFileDialog.Filter = "Encrypted files |*.enc*";
+            openFileDialog.Filter = "Encrypted files |*.twwcts*";
             openFileDialog.InitialDirectory = @"C:\";
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
