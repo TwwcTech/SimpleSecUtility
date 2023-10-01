@@ -25,7 +25,7 @@ namespace SimpleSecUtility.Frontend.SubForms
             {
                 if (PasswordSecurityCheck.Instance!.IsPasswordSecure(EncryptionPassTextbox.Text))
                 {
-                    FileEnDec.EncryptFile(EncryptionPassTextbox.Text);
+                    FileEnDec.ProvisionAndEncryptFile(EncryptionPassTextbox.Text);
                     Close();
                 }
             }
