@@ -7,7 +7,7 @@ namespace SimpleSecUtility.Backend.EnDec
     {
         private static readonly byte[] _IV = Encoding.UTF8.GetBytes("7418529630753951");
 
-        public static void EncryptFile(string password)
+        public static void ProvisionAndEncryptFile(string password)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Title = "Select a file to ecnrypt";
@@ -47,7 +47,7 @@ namespace SimpleSecUtility.Backend.EnDec
             }
         }
 
-        public static void DecryptFile(string password)
+        public static void ScanMetaAndDecryptFile(string password)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Title = "Select a File to Decrypt";
