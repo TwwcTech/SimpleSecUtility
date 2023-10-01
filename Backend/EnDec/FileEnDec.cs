@@ -15,7 +15,7 @@ namespace SimpleSecUtility.Backend.EnDec
             openFileDialog.InitialDirectory = @"C:\";
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                // Check to see if the file contains a GUID
+                // Check if file has a hash in the registry
 
                 SaveFileDialog saveFileDialog = new SaveFileDialog();
                 saveFileDialog.Title = "Select a Destination for Encrypted File";
