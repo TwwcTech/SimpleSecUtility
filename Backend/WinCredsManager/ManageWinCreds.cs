@@ -6,7 +6,7 @@ namespace SimpleSecUtility.Backend.WinCredsManager
     {
         public static void CreateNewCredential(string targetName, string username, string password)
         {
-            var credential = new Credential
+            var newCredential = new Credential
             {
                 Target = targetName,
                 Username = username,
@@ -15,7 +15,7 @@ namespace SimpleSecUtility.Backend.WinCredsManager
                 Type = CredentialType.Generic
             };
 
-            bool saveStatus = credential.Save();
+            bool saveStatus = newCredential.Save();
 
             if (saveStatus)
             {
@@ -23,13 +23,20 @@ namespace SimpleSecUtility.Backend.WinCredsManager
             }
             else
             {
-                MessageBox.Show("Unable to save credential", "Credential Save Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Unable to save newCredential", "Credential Save Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        public static void ReadCredential(string targetName)
+        public static string GetPassword(string targetName)
         {
-            // Code goes here
+            var existingCredential = new Credential { Target = targetName };
+
+            bool loadStatus = existingCredential.Load();
+            if (!loadStatus)
+            {
+                MessageBox.Show("Unable to load newCredential", "Credential Load Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return existingCredential.Password;
         }
     }
 }
