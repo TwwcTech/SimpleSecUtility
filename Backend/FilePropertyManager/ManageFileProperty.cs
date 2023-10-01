@@ -2,6 +2,9 @@
 {
     internal class ManageFileProperty
     {
-        // Code goes here
+        public static void AddGuidToFileProperty(string filePath, string guid)
+        {
+            // Code goes here
+        }
     }
 }
