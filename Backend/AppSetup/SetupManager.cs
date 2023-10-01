@@ -40,12 +40,29 @@ namespace SimpleSecUtility.Backend.AppSetup
                 {
                     try
                     {
-                        setupKey.SetValue("API Key", apiKey);
-                        setupKey.SetValue("Master", masterPassword);
+                        setupKey.SetValue("API Key", apiKey); // Remove when ready (Move to Windows Credential Manager)
+                        setupKey.SetValue("Master", masterPassword); // Remove when ready (Move to Windows Credential Manager)
                         setupKey.SetValue("Version", Statics.AppVersion);
                         setupKey.SetValue("Setup Date", DateTime.Now.ToString("ddMMyyyy"));
                     }
                     catch (Exception ex) { ex.ToString(); }
+                }
+                else
+                {
+                    MessageBox.Show($"Unable to create the \"{Statics.RegPath}\" App Folder", "App Setup Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                using (RegistryKey enDecFileKey = Registry.CurrentUser.CreateSubKey(Statics.RegPath + @"\EnDecFileExtensions"))
+                {
+                    if (enDecFileKey != null)
+                    {
+                        return;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Unable to create the \"EnDecFileExtensions\" Folder", "EnDecFileExtensions Setup Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
         }
