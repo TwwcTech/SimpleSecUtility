@@ -23,7 +23,7 @@ namespace SimpleSecUtility.Frontend.SubForms
 
             if (!isDecryptionTextboxEmpty)
             {
-                FileEnDec.DecryptFile(DecryptionPassTextbox.Text);
+                FileEnDec.ScanMetaAndDecryptFile(DecryptionPassTextbox.Text);
                 Close();
             }
         }
