@@ -19,6 +19,21 @@ namespace SimpleSecUtility.Backend.AppSetup
 
         public static void RunSetup(string masterPassword, string apiKey)
         {
+
+            /* When ready, remove the params
+             * and only add the "Setup Date"
+             * and "Version" to the base
+             * Registry Subkey :
+             * "SimpleSecUtlity"
+             * 
+             * After that was successful,
+             * add a new SubKey called: 
+             * "EnDecFileExtensions"
+             * (This will be used to 
+             * determine what the file
+             * extension was of the og
+             * unencrypted file) */
+
             using (RegistryKey setupKey = Registry.CurrentUser.CreateSubKey(Statics.RegPath))
             {
                 if (setupKey != null)
