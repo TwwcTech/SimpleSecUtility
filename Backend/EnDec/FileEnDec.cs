@@ -46,7 +46,7 @@ namespace SimpleSecUtility.Backend.EnDec
                         }
                     }
 
-                    // Update the encrypted Files MetaData here
+                    // Add new GUID to the encrypted Files MetaData here, unless the file already has a GUID add the same GUID to the encrypted file
                     // Add the file GUID and password to the Windows Credential Maanger
                 }
             }
