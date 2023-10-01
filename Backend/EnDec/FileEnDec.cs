@@ -15,6 +15,8 @@ namespace SimpleSecUtility.Backend.EnDec
             openFileDialog.InitialDirectory = @"C:\";
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
+                // Check to see if the file contains a GUID
+
                 SaveFileDialog saveFileDialog = new SaveFileDialog();
                 saveFileDialog.Title = "Select a Destination for Encrypted File";
                 saveFileDialog.Filter = "Encrypted files |*.twwcts*";
@@ -58,6 +60,8 @@ namespace SimpleSecUtility.Backend.EnDec
             openFileDialog.InitialDirectory = @"C:\";
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
+                // Get the GUID from the file
+
                 SaveFileDialog saveFileDialog = new SaveFileDialog();
                 saveFileDialog.Title = "Select a Destination for Decrypted File";
                 saveFileDialog.Filter = "All files | *.*";
@@ -86,6 +90,8 @@ namespace SimpleSecUtility.Backend.EnDec
                             }
                         }
                     }
+
+                    // Add the GUID to the file
                 }
             }
         }
