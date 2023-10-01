@@ -46,9 +46,9 @@ namespace SimpleSecUtility.Backend.EnDec
                         }
                     }
 
-                    // Add new GUID to the encrypted Files MetaData here, unless the file already has a GUID add the same GUID to the encrypted file
-                    // Add the file GUID and password to the Windows Credential Maanger
-                    // Remove the unecnrypted file
+                    // Add new GUID to the encrypted Files MetaData here. If the file already has a GUID add that GUID to the encrypted file
+                    // Add the file GUID and password to the Windows Credential Manager
+                    File.Delete(openFileDialog.FileName);
                 }
             }
         }
@@ -93,7 +93,7 @@ namespace SimpleSecUtility.Backend.EnDec
                     }
 
                     // Add the GUID to the file
-                    // Remove the ecnrypted file
+                    File.Delete(openFileDialog.FileName);
                 }
             }
         }
