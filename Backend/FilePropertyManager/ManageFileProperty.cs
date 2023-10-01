@@ -6,5 +6,10 @@
         {
             // Code goes here
         }
+
+        public static string GetGuidFromFile(string filePath)
+        {
+            // Code goes here
+        }
     }
 }
