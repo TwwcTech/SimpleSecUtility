@@ -25,7 +25,7 @@ namespace SimpleSecUtility.Backend.EnDec
                 SaveFileDialog saveFileDialog = new SaveFileDialog();
                 saveFileDialog.Title = "Select a Destination for Encrypted File";
                 saveFileDialog.Filter = "Encrypted files |*.twwcts*";
-                //saveFileDialog.FileName = GuidGenerator.GenerateNewGuid();
+                //saveFileDialog.FileName = GuidGenerator.GenerateNewGuid(); // Enter the GUID of the hashed file if it exists, else generate a new GUID
                 if (saveFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     using (FileStream inputSream = new(openFileDialog.FileName, FileMode.Open, FileAccess.Read))
@@ -51,9 +51,6 @@ namespace SimpleSecUtility.Backend.EnDec
                             }
                         }
                     }
-
-                    // If hash is already in Registry and GUID is already in Credential manager, use that GUID as the file name.
-                    // Else, Generate a new GUID
                     // And add openFileName hash to the Registry 
                     // And add the file GUID and password to the Windows Credential Manager
                     File.Delete(openFileDialog.FileName);
@@ -70,10 +67,17 @@ namespace SimpleSecUtility.Backend.EnDec
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 // Get the GUID from the file
+                // Run it by the Windows Credential Manager
+                // Grab the og file name from the Credential (Credential.UserName)
+                // Determine the ext of the file name and set it as the filter
+                // Determine the file name of the file and set it to the saveFileDialog.FileName
+                // Grab the password from the Credential (Credential.Password)
+                // Use this password to decrypt the file
 
                 SaveFileDialog saveFileDialog = new SaveFileDialog();
                 saveFileDialog.Title = "Select a Destination for Decrypted File";
-                saveFileDialog.Filter = "All files | *.*";
+                saveFileDialog.Filter = "All files | *.*"; // Extension of og file path
+                //saveFileDialog.FileName = ""; // og file path name
                 if (saveFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     using (FileStream inputStream = new(openFileDialog.FileName, FileMode.Open, FileAccess.Read))
@@ -82,7 +86,7 @@ namespace SimpleSecUtility.Backend.EnDec
                         {
                             using (System.Security.Cryptography.Aes aes = System.Security.Cryptography.Aes.Create())
                             {
-                                byte[] passwordBytes = Encoding.UTF8.GetBytes(password);
+                                byte[] passwordBytes = Encoding.UTF8.GetBytes(password); // Credential.Password
                                 using (ICryptoTransform decryptor = aes.CreateDecryptor(passwordBytes, _IV))
                                 {
                                     using (CryptoStream cryptoStream = new(outputStream, decryptor, CryptoStreamMode.Write))
@@ -99,8 +103,6 @@ namespace SimpleSecUtility.Backend.EnDec
                             }
                         }
                     }
-
-                    // Add the GUID to the file
                     File.Delete(openFileDialog.FileName);
                 }
             }
