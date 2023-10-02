@@ -22,7 +22,13 @@ namespace SimpleSecUtility.Backend.SecureGenerator
                         throw new ArgumentException("Not an option, please select from: [password, pin]");
                 }
 
-                string apiKey = RegistryReader.ReadApiKey("apikey");
+                /* Change the way we grab the API Key,
+                 * it will no longer be in the registry, 
+                 * but in the Windows Credential Manager.
+                 * (Call the API key from the Windows
+                 * Credential Manager) */
+
+                string apiKey = RegistryReader.ReadApiKey("apikey"); // Replace method with correct method when ready 
                 string requestResult = string.Empty;
 
                 if (!string.IsNullOrEmpty(apiKey))
