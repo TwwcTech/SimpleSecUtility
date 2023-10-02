@@ -16,10 +16,16 @@ namespace SimpleSecUtility.Backend.EnDec
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 // Check if file has a hash in the registry
+                // If hash exists, grab the GUID
+                // Refer the GUID to the Windows Credential Manager
+                // And Get the password associated with the credential
+                // Encrypt the file with that password
+                // Else, display the password prompt window and enter a new password
 
                 SaveFileDialog saveFileDialog = new SaveFileDialog();
                 saveFileDialog.Title = "Select a Destination for Encrypted File";
                 saveFileDialog.Filter = "Encrypted files |*.twwcts*";
+                //saveFileDialog.FileName = GuidGenerator.GenerateNewGuid();
                 if (saveFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     using (FileStream inputSream = new(openFileDialog.FileName, FileMode.Open, FileAccess.Read))
@@ -46,7 +52,10 @@ namespace SimpleSecUtility.Backend.EnDec
                         }
                     }
 
-                    // Add the file GUID and password to the Windows Credential Manager
+                    // If hash is already in Registry and GUID is already in Credential manager, use that GUID as the file name.
+                    // Else, Generate a new GUID
+                    // And add openFileName hash to the Registry 
+                    // And add the file GUID and password to the Windows Credential Manager
                     File.Delete(openFileDialog.FileName);
                 }
             }
