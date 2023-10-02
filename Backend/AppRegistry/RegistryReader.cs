@@ -24,9 +24,9 @@ namespace SimpleSecUtility.Backend.AppRegistry
                             return readKey.GetValue("Setup Date")!.ToString()!;
                         case "version":
                             return readKey.GetValue("Version")!.ToString()!;
-                        case "apikey": 
+                        case "apikey":
                             return readKey.GetValue("API Key")!.ToString()!;
-                        case "master": 
+                        case "master":
                             return readKey.GetValue("Master")!.ToString()!;
                         default:
                             throw new ArgumentException("Not an option. Please choose from: [setupdate, version, apikey]");

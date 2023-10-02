@@ -17,12 +17,14 @@ namespace SimpleSecUtility.Frontend
 
         private void encryptButton_Click(object sender, EventArgs e)
         {
+            // Add encryption method here and pass the Form through
             Form encryptionPassForm = new EncryptionPasswordForm();
             encryptionPassForm.ShowDialog();
         }
 
         private void decryptButton_Click(object sender, EventArgs e)
         {
+            // Add the decryption method here and pass the Form through
             Form decryptionPassForm = new DecryptionPasswordForm();
             decryptionPassForm.ShowDialog();
         }
