@@ -18,6 +18,8 @@ namespace SimpleSecUtility.Frontend.SubForms
 
         private void SubmitDecPassButton_Click(object sender, EventArgs e)
         {
+            // Event hanlder to handle the textbox and pass it to the decryption class
+
             TextBox[] decryptionTextbox = new TextBox[] { DecryptionPassTextbox };
             bool isDecryptionTextboxEmpty = EmptyChecks.Instance.AreTextboxInputsEmpty(decryptionTextbox);
 
