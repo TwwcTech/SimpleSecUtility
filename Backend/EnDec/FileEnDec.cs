@@ -7,7 +7,7 @@ namespace SimpleSecUtility.Backend.EnDec
     {
         private static readonly byte[] _IV = Encoding.UTF8.GetBytes("7418529630753951");
 
-        public static void ProvisionAndEncryptFile(string password)
+        public static void ProvisionAndEncryptFile(string password) // Explore the idea of passing through a Form object to open the password promtps, or not and continue with the script!
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Title = "Select a file to ecnrypt";
@@ -52,7 +52,7 @@ namespace SimpleSecUtility.Backend.EnDec
             }
         }
 
-        public static void ScanMetaAndDecryptFile(string password)
+        public static void ScanMetaAndDecryptFile(string password) // Explore the idea of passing through a Form object to open the password promtps, or not and continue with the script!
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Title = "Select a File to Decrypt";
