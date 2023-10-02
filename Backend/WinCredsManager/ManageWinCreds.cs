@@ -27,16 +27,27 @@ namespace SimpleSecUtility.Backend.WinCredsManager
             }
         }
 
-        public static string GetPassword(string targetName)
+        public static bool DoesCredentialExist(string targetName)
+        {
+            var credentialToCheck = new Credential { Target = targetName };
+            if (credentialToCheck.Load())
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public static string GetSecret(string targetName)
         {
             var existingCredential = new Credential { Target = targetName };
+            string secret = string.Empty;
 
             bool loadStatus = existingCredential.Load();
-            if (!loadStatus)
+            if (loadStatus)
             {
-                MessageBox.Show("Unable to load newCredential", "Credential Load Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                secret = existingCredential.Password;
             }
-            return existingCredential.Password;
+            return secret;
         }
     }
 }
