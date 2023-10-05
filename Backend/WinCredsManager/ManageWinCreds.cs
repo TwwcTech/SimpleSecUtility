@@ -37,6 +37,19 @@ namespace SimpleSecUtility.Backend.WinCredsManager
             return false;
         }
 
+        public static string GetOgFileName(string targetName)
+        {
+            var ogFileCredential = new Credential { Target = targetName };
+            string ogFileName = string.Empty;
+
+            bool loadStatus = ogFileCredential.Load();
+            if (loadStatus)
+            {
+                ogFileName = ogFileCredential.Username;
+            }
+            return ogFileName;
+        }
+
         public static string GetSecret(string targetName)
         {
             var existingCredential = new Credential { Target = targetName };
