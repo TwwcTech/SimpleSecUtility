@@ -37,6 +37,22 @@ namespace SimpleSecUtility.Backend.WinCredsManager
             return false;
         }
 
+        public static string GetGUID(string targetName)
+        {
+            var guidCredential = new Credential { Target = targetName };
+            string fileGUID = string.Empty;
+
+            bool loadStatus = guidCredential.Load();
+            if (loadStatus)
+            {
+                if (GuidGenerator.IsGuid(guidCredential.Target))
+                {
+                    fileGUID = guidCredential.Target.ToString();
+                }
+            }
+            return fileGUID;
+        }
+
         public static string GetOgFileName(string targetName)
         {
             var ogFileCredential = new Credential { Target = targetName };
