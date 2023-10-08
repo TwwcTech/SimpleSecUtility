@@ -26,7 +26,7 @@ namespace SimpleSecUtility.Frontend.SubForms
                 if (PasswordSecurityCheck.Instance!.IsPasswordSecure(masterPassTextbox.Text))
                 {
                     string hashedMasterPass = Hasher.Hash(masterPassTextbox.Text);
-                    if (hashedMasterPass == RegistryReader.ReadApiKey("master"))
+                    if (hashedMasterPass == RegistryReader.ReadApiKey("master")) // Changing this to read from the Credential Manager
                     {
                         Close();
                     }
