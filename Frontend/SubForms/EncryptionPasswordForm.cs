@@ -3,6 +3,8 @@ using SimpleSecUtility.Backend.InputChecks;
 
 namespace SimpleSecUtility.Frontend.SubForms
 {
+    // STEP 7
+
     public partial class EncryptionPasswordForm : Form
     {
         public EncryptionPasswordForm()
