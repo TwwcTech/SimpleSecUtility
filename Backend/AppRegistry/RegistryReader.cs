@@ -5,7 +5,6 @@ namespace SimpleSecUtility.Backend.AppRegistry
 {
     internal class RegistryReader
     {
-        // Create method to call API Key from the Windows Credential Manager before removing method
         public static string ReadApiKey(string keyName)
         {
             /* Remove this method or update the method name
@@ -35,6 +34,8 @@ namespace SimpleSecUtility.Backend.AppRegistry
                 return null!;
             }
         }
+
+        // Create method to call API Key from the Windows Credential Manager before removing method
 
         public static bool DoesHashedPathExist(string keyName)
         {
