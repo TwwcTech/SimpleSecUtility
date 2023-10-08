@@ -1,8 +1,11 @@
-﻿using System.Security.Cryptography;
+﻿using SimpleSecUtility.Backend.EnDec.FileExtensions;
+using System.Security.Cryptography;
 using System.Text;
 
 namespace SimpleSecUtility.Backend.EnDec
 {
+    // STEP 5
+
     internal class FileEnDec
     {
         private static readonly byte[] _IV = Encoding.UTF8.GetBytes("7418529630753951");
@@ -15,7 +18,8 @@ namespace SimpleSecUtility.Backend.EnDec
             openFileDialog.InitialDirectory = @"C:\";
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                // Create method of only reading the filename of the full filepath
+                // Isolate the filename from the filepath
+                string openFileName = FileNameIsolator.IsolateFileName(openFileDialog.FileName);
 
                 SaveFileDialog saveFileDialog = new SaveFileDialog();
                 saveFileDialog.Title = "Select a Destination for Encrypted File";
