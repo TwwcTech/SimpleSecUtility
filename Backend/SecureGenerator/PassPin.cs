@@ -2,6 +2,8 @@
 
 namespace SimpleSecUtility.Backend.SecureGenerator
 {
+    // STEP 3
+
     internal class PassPin
     {
         public static async Task<string> ReturnSecurePasswordOrPIN(string requestType, int requestLength)
@@ -28,7 +30,7 @@ namespace SimpleSecUtility.Backend.SecureGenerator
                  * (Call the API key from the Windows
                  * Credential Manager) */
 
-                string apiKey = RegistryReader.ReadApiKey("apikey"); // Replace method with correct method when ready 
+                string apiKey = RegistryReader.ReadApiKey("apikey"); // Replace method with correct method, when ready (Read from Credential Manager, not the Registry) 
                 string requestResult = string.Empty;
 
                 if (!string.IsNullOrEmpty(apiKey))

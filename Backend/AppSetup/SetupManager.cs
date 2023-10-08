@@ -3,6 +3,8 @@ using SimpleSecUtility.AppResources;
 
 namespace SimpleSecUtility.Backend.AppSetup
 {
+    // STEP 1
+
     internal class SetupManager
     {
         public static bool HasAppBeenSetup()

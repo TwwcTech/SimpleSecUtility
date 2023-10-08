@@ -5,6 +5,8 @@ using SimpleSecUtility.Backend.InputChecks;
 
 namespace SimpleSecUtility.Frontend
 {
+    // STEP 2
+
     public partial class SetupForm : Form
     {
         public SetupForm()
