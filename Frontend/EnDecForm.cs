@@ -2,6 +2,8 @@
 
 namespace SimpleSecUtility.Frontend
 {
+    // STEP 6
+
     public partial class EnDecForm : Form
     {
         public EnDecForm()
