@@ -3,6 +3,8 @@ using SimpleSecUtility.AppResources;
 
 namespace SimpleSecUtility.Backend.AppRegistry
 {
+    // STEP 4
+
     internal class RegistryReader
     {
         public static string ReadApiKey(string keyName)
