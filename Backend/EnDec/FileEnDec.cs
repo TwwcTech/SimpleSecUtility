@@ -70,20 +70,20 @@ namespace SimpleSecUtility.Backend.EnDec
             openFileDialog.InitialDirectory = @"C:\";
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                // Get the GUID from the file
-                // Run it by the Windows Credential Manager
-                // Grab the og file name from the Credential (Credential.UserName)
-                // Determine the ext of the file name and set it as the filter
-                // Determine the file name of the file and set it to the saveFileDialog.FileName
-                // Grab the password from the Credential (Credential.Password)
-                // Use this password to decrypt the file
-
                 SaveFileDialog saveFileDialog = new SaveFileDialog();
                 saveFileDialog.Title = "Select a Destination for Decrypted File";
                 saveFileDialog.Filter = "All files | *.*"; // Extension of og file path
                 //saveFileDialog.FileName = ""; // og file path name
                 if (saveFileDialog.ShowDialog() == DialogResult.OK)
                 {
+                    // Get the GUID from the file
+                    // Run it by the Windows Credential Manager
+                    // Grab the og file name from the Credential (Credential.UserName)
+                    // Determine the ext of the file name and set it as the filter
+                    // Determine the file name of the file and set it to the saveFileDialog.FileName
+                    // Grab the password from the Credential (Credential.Password)
+                    // Use this password to decrypt the file
+
                     using (FileStream inputStream = new(openFileDialog.FileName, FileMode.Open, FileAccess.Read))
                     {
                         using (FileStream outputStream = new(saveFileDialog.FileName, FileMode.Create, FileAccess.Write))
