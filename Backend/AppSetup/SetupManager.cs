@@ -3,8 +3,6 @@ using SimpleSecUtility.AppResources;
 
 namespace SimpleSecUtility.Backend.AppSetup
 {
-    // STEP 1
-
     internal class SetupManager
     {
         public static bool HasAppBeenSetup()
@@ -27,8 +25,6 @@ namespace SimpleSecUtility.Backend.AppSetup
                 {
                     try
                     {
-                        setupKey.SetValue("API Key", apiKey); // Remove when ready (Move to Windows Credential Manager)
-                        setupKey.SetValue("Master", masterPassword); // Remove when ready (Move to Windows Credential Manager)
                         setupKey.SetValue("Version", Statics.AppVersion);
                         setupKey.SetValue("Setup Date", DateTime.Now.ToString("ddMMyyyy"));
                     }
