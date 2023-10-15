@@ -1,5 +1,4 @@
-﻿using SimpleSecUtility.Backend.AppRegistry;
-using SimpleSecUtility.Backend.WinCredsManager;
+﻿using SimpleSecUtility.Backend.WinCredsManager;
 
 namespace SimpleSecUtility.Backend.SecureGenerator
 {
