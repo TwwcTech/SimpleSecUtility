@@ -1,9 +1,8 @@
 ﻿using SimpleSecUtility.Backend.AppRegistry;
+using SimpleSecUtility.Backend.WinCredsManager;
 
 namespace SimpleSecUtility.Backend.SecureGenerator
 {
-    // STEP 3
-
     internal class PassPin
     {
         public static async Task<string> ReturnSecurePasswordOrPIN(string requestType, int requestLength)
@@ -24,20 +23,12 @@ namespace SimpleSecUtility.Backend.SecureGenerator
                         throw new ArgumentException("Not an option, please select from: [password, pin]");
                 }
 
-                /* Change the way we grab the API Key,
-                 * it will no longer be in the registry, 
-                 * but in the Windows Credential Manager.
-                 * (Call the API key from the Windows
-                 * Credential Manager) */
-
-                string apiKey = RegistryReader.ReadApiKey("apikey"); // Replace method with correct method, when ready (Read from Credential Manager, not the Registry) 
                 string requestResult = string.Empty;
-
-                if (!string.IsNullOrEmpty(apiKey))
+                if (ManageWinCreds.DoesCredentialExist("SSU_api"))
                 {
                     try
                     {
-                        requestClient.DefaultRequestHeaders.Add("X-RandomOrg-ApiKey", apiKey);
+                        requestClient.DefaultRequestHeaders.Add("X-RandomOrg-ApiKey", ManageWinCreds.GetSecret("SSU_api"));
                         HttpResponseMessage response = await requestClient.GetAsync(apiUrl);
 
                         if (response.IsSuccessStatusCode)
