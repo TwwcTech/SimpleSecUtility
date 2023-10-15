@@ -17,7 +17,7 @@ namespace SimpleSecUtility.Backend.AppSetup
             }
         }
 
-        public static void RunSetup(string masterPassword, string apiKey) // Remove the params
+        public static void RunSetup()
         {
             using (RegistryKey setupKey = Registry.CurrentUser.CreateSubKey(Statics.RegPath))
             {
