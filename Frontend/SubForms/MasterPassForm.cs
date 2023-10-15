@@ -1,11 +1,10 @@
 ﻿using SimpleSecUtility.Backend;
 using SimpleSecUtility.Backend.AppRegistry;
 using SimpleSecUtility.Backend.InputChecks;
+using SimpleSecUtility.Backend.WinCredsManager;
 
 namespace SimpleSecUtility.Frontend.SubForms
 {
-    // STEP 2.1 
-
     public partial class MasterPassForm : Form
     {
         public MasterPassForm()
@@ -28,7 +27,7 @@ namespace SimpleSecUtility.Frontend.SubForms
                 if (PasswordSecurityCheck.Instance!.IsPasswordSecure(masterPassTextbox.Text))
                 {
                     string hashedMasterPass = Hasher.Hash(masterPassTextbox.Text);
-                    if (hashedMasterPass == RegistryReader.ReadApiKey("master")) // Changing this to read from the Credential Manager
+                    if (hashedMasterPass == ManageWinCreds.GetSecret("SSU_master"))
                     {
                         Close();
                     }
