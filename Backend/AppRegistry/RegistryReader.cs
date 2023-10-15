@@ -3,7 +3,7 @@ using SimpleSecUtility.AppResources;
 
 namespace SimpleSecUtility.Backend.AppRegistry
 {
-    // STEP 4
+    // STEP 4 - Create method to call API Key from the Windows Credential Manager before removing method
 
     internal class RegistryReader
     {
@@ -36,8 +36,6 @@ namespace SimpleSecUtility.Backend.AppRegistry
                 return null!;
             }
         }
-
-        // Create method to call API Key from the Windows Credential Manager before removing method
 
         public static bool DoesHashedPathExist(string keyName)
         {
