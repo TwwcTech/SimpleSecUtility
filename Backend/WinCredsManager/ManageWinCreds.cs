@@ -4,16 +4,31 @@ namespace SimpleSecUtility.Backend.WinCredsManager
 {
     internal class ManageWinCreds
     {
-        public static void CreateNewCredential(string targetName, string username, string password)
+        public static void CreateNewCredential(string targetName, string password, string username = null!)
         {
-            var newCredential = new Credential
+            Credential newCredential;
+
+            if (username == null)
             {
-                Target = targetName,
-                Username = username,
-                Password = password,
-                PersistanceType = PersistanceType.LocalComputer,
-                Type = CredentialType.Generic
-            };
+                newCredential = new Credential
+                {
+                    Target = targetName,
+                    Password = password,
+                    PersistanceType = PersistanceType.LocalComputer,
+                    Type = CredentialType.Generic
+                };
+            }
+            else
+            {
+                newCredential = new Credential
+                {
+                    Target = targetName,
+                    Username = username,
+                    Password = password,
+                    PersistanceType = PersistanceType.LocalComputer,
+                    Type = CredentialType.Generic
+                };
+            }
 
             bool saveStatus = newCredential.Save();
 
