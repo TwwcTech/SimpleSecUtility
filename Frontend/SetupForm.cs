@@ -6,8 +6,6 @@ using SimpleSecUtility.Backend.WinCredsManager;
 
 namespace SimpleSecUtility.Frontend
 {
-    // STEP 2
-
     public partial class SetupForm : Form
     {
         public SetupForm()
