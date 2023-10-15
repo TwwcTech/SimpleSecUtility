@@ -1,5 +1,5 @@
-﻿using SimpleSecUtility.AppResources;
-using Microsoft.Win32;
+﻿using Microsoft.Win32;
+using SimpleSecUtility.AppResources;
 
 namespace SimpleSecUtility.Backend.AppRegistry
 {

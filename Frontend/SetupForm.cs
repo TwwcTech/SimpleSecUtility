@@ -42,7 +42,7 @@ namespace SimpleSecUtility.Frontend
                     string hashedPassword = Hasher.Hash(masterPassword);
                     // Save hashed password to the Credential Manager
                     // Save the API Key to the Credential Manager
-                    SetupManager.RunSetup(); 
+                    SetupManager.RunSetup();
                     MessageBox.Show("An internet connection will be required to use the Password/PIN Request Tool", "Quick Tip", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Close();
                 }

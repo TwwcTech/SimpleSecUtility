@@ -33,9 +33,9 @@ namespace SimpleSecUtility.Backend.EnDec
                     // Encrypt the file with that password
                     // Else, display the password prompt window and enter a new password
                     // Possibly, save the password as a varaible
-                        // Create a new Credential in the Credential Manager using that new password variable
-                        // Add the Guid and OG filename and file extention to the Credential Manager
-                        // Add the hashed filename and the GUID to the registry
+                    // Create a new Credential in the Credential Manager using that new password variable
+                    // Add the Guid and OG filename and file extention to the Credential Manager
+                    // Add the hashed filename and the GUID to the registry
                     // Encrypt the file
 
                     using (FileStream inputSream = new(openFileDialog.FileName, FileMode.Open, FileAccess.Read))
