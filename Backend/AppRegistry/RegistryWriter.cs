@@ -7,12 +7,10 @@ namespace SimpleSecUtility.Backend.AppRegistry
     {
         public static void WriteFileNameHashAndGUID(string fileNameHash, string guid)
         {
-            using (RegistryKey writeFileNameHashKey = Registry.CurrentUser.OpenSubKey(Statics.RegPath + @"\EnDecFileExtensions")!)
+            using RegistryKey writeFileNameHashKey = Registry.CurrentUser.OpenSubKey(Statics.RegPath + @"\EnDecFileExtensions")!;
+            if (writeFileNameHashKey != null)
             {
-                if (writeFileNameHashKey != null)
-                {
-                    writeFileNameHashKey.SetValue(fileNameHash, guid);
-                }
+                writeFileNameHashKey.SetValue(fileNameHash, guid);
             }
         }
     }
