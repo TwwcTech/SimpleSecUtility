@@ -1,5 +1,4 @@
 ﻿using SimpleSecUtility.Backend;
-using SimpleSecUtility.Backend.AppRegistry;
 using SimpleSecUtility.Backend.InputChecks;
 using SimpleSecUtility.Backend.WinCredsManager;
 
