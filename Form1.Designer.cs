@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             PassPinButton = new Button();
             toolTip = new ToolTip(components);
             panel1 = new Panel();
@@ -72,6 +73,7 @@
             Controls.Add(panel1);
             Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
             FormBorderStyle = FormBorderStyle.Fixed3D;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "MainForm";
