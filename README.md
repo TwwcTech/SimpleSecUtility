@@ -16,9 +16,6 @@ The application integrates with the Random.org API to generate the passwords and
 
 This application is perfect for anyone who needs a quick, secure, and reliable way to generate passwords or PINs.
 
-# Release Notes
-**Full Changelog**: https://github.com/TwwcTech/SimpleSecUtility/commits/v1.0.0
-
 # Screenshots
 <img width="408" alt="MainWindow" src="https://github.com/TwwcTech/SimpleSecUtility/assets/71518263/d53fbff4-c1eb-41ab-8284-342baa6a7f5c">
 <img width="500" alt="PassPinGenWindow" src="https://github.com/TwwcTech/SimpleSecUtility/assets/71518263/9f678e3e-3e6b-4722-8380-c4bce06b7cd1">
