@@ -18,4 +18,4 @@ This application is perfect for anyone who needs a quick, secure, and reliable w
 
 # Screenshots
 <img width="408" alt="MainWindow" src="https://github.com/TwwcTech/SimpleSecUtility/assets/71518263/d53fbff4-c1eb-41ab-8284-342baa6a7f5c">
-<img width="495" alt="PassPinGenWindow" src="https://github.com/TwwcTech/SimpleSecUtility/assets/71518263/0e8bca1d-8a10-4d43-ab1f-c82d88e46d15">
+<img width="500" alt="PassPinGenWindow" src="https://github.com/TwwcTech/SimpleSecUtility/assets/71518263/9f678e3e-3e6b-4722-8380-c4bce06b7cd1">
