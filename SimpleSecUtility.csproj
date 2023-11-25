@@ -2,11 +2,22 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net7.0-windows</TargetFramework>
+    <TargetFramework>net7.0-windows10.0.22621.0</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
     <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>simpleSecAppIcon.ico</ApplicationIcon>
+    <Title>SimpleSecUtility</Title>
+    <Company>$(Authors)TwwcTech</Company>
+    <Authors>Timothy Collins</Authors>
+    <Description>A simple utility that generates secure passwords or PINs
+</Description>
+    <Copyright>2023</Copyright>
+    <PackageProjectUrl>https://github.com/TwwcTech/SimpleSecUtility</PackageProjectUrl>
+    <PackageIcon>appIcon.png</PackageIcon>
+    <RepositoryUrl>https://github.com/TwwcTech/SimpleSecUtility</RepositoryUrl>
+    <PackageTags>v1.0.0</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
@@ -19,6 +30,10 @@
       <Isolated>false</Isolated>
       <EmbedInteropTypes>true</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="simpleSecAppIcon.ico" />
   </ItemGroup>
 
   <ItemGroup>
@@ -43,6 +58,13 @@
 
   <ItemGroup>
     <Folder Include="Properties\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\..\..\..\..\Downloads\appIcon.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
