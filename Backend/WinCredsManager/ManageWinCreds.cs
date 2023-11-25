@@ -1,5 +1,7 @@
 ﻿using CredentialManagement;
 
+// REMOVE THIS ENTIRE FILE
+
 namespace SimpleSecUtility.Backend.WinCredsManager
 {
     internal class ManageWinCreds
@@ -60,10 +62,7 @@ namespace SimpleSecUtility.Backend.WinCredsManager
             bool loadStatus = guidCredential.Load();
             if (loadStatus)
             {
-                if (GuidGenerator.IsGuid(guidCredential.Target))
-                {
-                    fileGUID = guidCredential.Target.ToString();
-                }
+                fileGUID = guidCredential.Target.ToString();
             }
             return fileGUID;
         }
