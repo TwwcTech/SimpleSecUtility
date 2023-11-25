@@ -31,12 +31,9 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             PassPinButton = new Button();
-            FileEnDecButton = new Button();
             toolTip = new ToolTip(components);
             panel1 = new Panel();
-            panel2 = new Panel();
             panel1.SuspendLayout();
-            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // PassPinButton
@@ -48,25 +45,11 @@
             PassPinButton.Image = (Image)resources.GetObject("PassPinButton.Image");
             PassPinButton.Location = new Point(0, 0);
             PassPinButton.Name = "PassPinButton";
-            PassPinButton.Size = new Size(412, 690);
+            PassPinButton.Size = new Size(824, 690);
             PassPinButton.TabIndex = 0;
             PassPinButton.TextAlign = ContentAlignment.BottomCenter;
             PassPinButton.UseVisualStyleBackColor = true;
             PassPinButton.Click += PassPinButton_Click;
-            // 
-            // FileEnDecButton
-            // 
-            FileEnDecButton.Dock = DockStyle.Fill;
-            FileEnDecButton.FlatAppearance.BorderSize = 0;
-            FileEnDecButton.FlatStyle = FlatStyle.Flat;
-            FileEnDecButton.Image = (Image)resources.GetObject("FileEnDecButton.Image");
-            FileEnDecButton.Location = new Point(0, 0);
-            FileEnDecButton.Name = "FileEnDecButton";
-            FileEnDecButton.Size = new Size(412, 690);
-            FileEnDecButton.TabIndex = 1;
-            FileEnDecButton.TextAlign = ContentAlignment.BottomCenter;
-            FileEnDecButton.UseVisualStyleBackColor = true;
-            FileEnDecButton.Click += FileEnDecButton_Click;
             // 
             // toolTip
             // 
@@ -76,27 +59,17 @@
             // panel1
             // 
             panel1.Controls.Add(PassPinButton);
-            panel1.Dock = DockStyle.Left;
+            panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(412, 690);
+            panel1.Size = new Size(824, 690);
             panel1.TabIndex = 2;
-            // 
-            // panel2
-            // 
-            panel2.Controls.Add(FileEnDecButton);
-            panel2.Dock = DockStyle.Left;
-            panel2.Location = new Point(412, 0);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(412, 690);
-            panel2.TabIndex = 3;
             // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(824, 690);
-            Controls.Add(panel2);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.Fixed3D;
             MaximizeBox = false;
@@ -107,16 +80,13 @@
             Text = "Simple Sec Utility";
             Load += MainForm_Load;
             panel1.ResumeLayout(false);
-            panel2.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
 
         private Button PassPinButton;
-        private Button FileEnDecButton;
         private ToolTip toolTip;
         private Panel panel1;
-        private Panel panel2;
     }
 }
