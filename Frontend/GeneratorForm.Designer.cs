@@ -60,14 +60,16 @@
             ControlsPanel.Controls.Add(PasswordCheckbox);
             ControlsPanel.Dock = DockStyle.Top;
             ControlsPanel.Location = new Point(0, 0);
+            ControlsPanel.Margin = new Padding(3, 4, 3, 4);
             ControlsPanel.Name = "ControlsPanel";
-            ControlsPanel.Size = new Size(1005, 403);
+            ControlsPanel.Size = new Size(1005, 404);
             ControlsPanel.TabIndex = 0;
             // 
             // RequestButton
             // 
             RequestButton.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
             RequestButton.Location = new Point(424, 264);
+            RequestButton.Margin = new Padding(3, 4, 3, 4);
             RequestButton.Name = "RequestButton";
             RequestButton.Size = new Size(154, 57);
             RequestButton.TabIndex = 6;
@@ -118,6 +120,7 @@
             PinCheckbox.AutoSize = true;
             PinCheckbox.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             PinCheckbox.Location = new Point(152, 144);
+            PinCheckbox.Margin = new Padding(3, 4, 3, 4);
             PinCheckbox.Name = "PinCheckbox";
             PinCheckbox.Size = new Size(243, 34);
             PinCheckbox.TabIndex = 1;
@@ -130,6 +133,7 @@
             PasswordCheckbox.AutoSize = true;
             PasswordCheckbox.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             PasswordCheckbox.Location = new Point(152, 89);
+            PasswordCheckbox.Margin = new Padding(3, 4, 3, 4);
             PasswordCheckbox.Name = "PasswordCheckbox";
             PasswordCheckbox.Size = new Size(242, 34);
             PasswordCheckbox.TabIndex = 0;
@@ -144,6 +148,7 @@
             OutputPanel.Controls.Add(OutputLabel);
             OutputPanel.Dock = DockStyle.Bottom;
             OutputPanel.Location = new Point(0, 409);
+            OutputPanel.Margin = new Padding(3, 4, 3, 4);
             OutputPanel.Name = "OutputPanel";
             OutputPanel.Size = new Size(1005, 198);
             OutputPanel.TabIndex = 1;
@@ -185,16 +190,20 @@
             // 
             // GeneratorForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleDimensions = new SizeF(144F, 144F);
+            AutoScaleMode = AutoScaleMode.Dpi;
             ClientSize = new Size(1005, 607);
             Controls.Add(OutputPanel);
             Controls.Add(ControlsPanel);
+            Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
             FormBorderStyle = FormBorderStyle.Fixed3D;
+            Margin = new Padding(3, 4, 3, 4);
             MaximizeBox = false;
             Name = "GeneratorForm";
+            ShowIcon = false;
+            SizeGripStyle = SizeGripStyle.Hide;
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "GeneratorForm";
+            Text = "Password / PIN Generator";
             Load += GeneratorForm_Load;
             ControlsPanel.ResumeLayout(false);
             ControlsPanel.PerformLayout();
