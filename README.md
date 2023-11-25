@@ -10,7 +10,8 @@ This application is a secure password and PIN generator developed in C#. It prov
 
 - **Copy to Clipboard**: Users can easily copy the generated password or PIN to the clipboard by right-clicking the output to show a copy menu context. This feature enhances the user experience by providing a quick and easy way to use the generated password or PIN.
 
-**MUST HAVE ADMIN RIGHTS TO RUN**
+# Requirements
+- **Admin Rights**
 
 ## API Integration
 
