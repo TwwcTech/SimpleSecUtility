@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             PassPinButton = new Button();
             toolTip = new ToolTip(components);
             panel1 = new Panel();
@@ -42,7 +41,7 @@
             PassPinButton.FlatAppearance.BorderSize = 0;
             PassPinButton.FlatStyle = FlatStyle.Flat;
             PassPinButton.Font = new Font("Century Gothic", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            PassPinButton.Image = (Image)resources.GetObject("PassPinButton.Image");
+            PassPinButton.Image = Resources.mainButtonLogo;
             PassPinButton.Location = new Point(0, 0);
             PassPinButton.Name = "PassPinButton";
             PassPinButton.Size = new Size(824, 690);
