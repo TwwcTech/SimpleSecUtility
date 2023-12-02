@@ -56,24 +56,16 @@ namespace SimpleSecUtility.Frontend
             }
         }
 
-        // maybe update this so it reverts to the highest "25" when over and lowest "8" when under
-        private void PasswordLengthPicker_Leave(object sender, EventArgs e)
+        private void PasswordLengthPicker_ValueChanged(object sender, EventArgs e)
         {
-            if (PasswordLengthPicker.Value < 8 || PasswordLengthPicker.Value > 25)
-            {
-                MessageBox.Show("Password must be a minumum length of 8 and no greater than 25", "Password Length Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                PasswordLengthPicker.Focus();
-            }
+            PasswordLengthPicker.Value = PasswordLengthPicker.Value < 8 ? 8 : PasswordLengthPicker.Value;
+            PasswordLengthPicker.Value = PasswordLengthPicker.Value > 25 ? 25 : PasswordLengthPicker.Value;
         }
 
-        // maybe update this so it reverts to the highest "6" when over and lowest "4" when under
-        private void PinLengthPicker_Leave(object sender, EventArgs e)
+        private void PinLengthPicker_ValueChanged(object sender, EventArgs e)
         {
-            if (PinLengthPicker.Value < 4 || PinLengthPicker.Value > 6)
-            {
-                MessageBox.Show("PIN must be a minimum length of 4 and no greater than 6", "PIN Length Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                PinLengthPicker.Focus();
-            }
+            PinLengthPicker.Value = PinLengthPicker.Value < 4 ? 4 : PinLengthPicker.Value;
+            PinLengthPicker.Value = PinLengthPicker.Value > 6 ? 6 : PinLengthPicker.Value;
         }
 
         private async void RequestButton_Click(object sender, EventArgs e)
