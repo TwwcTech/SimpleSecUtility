@@ -105,7 +105,7 @@
             PinLengthPicker.Name = "PinLengthPicker";
             PinLengthPicker.Size = new Size(180, 37);
             PinLengthPicker.TabIndex = 3;
-            PinLengthPicker.Leave += PinLengthPicker_Leave;
+            PinLengthPicker.ValueChanged += PinLengthPicker_ValueChanged;
             // 
             // PasswordLengthPicker
             // 
@@ -114,7 +114,7 @@
             PasswordLengthPicker.Name = "PasswordLengthPicker";
             PasswordLengthPicker.Size = new Size(180, 37);
             PasswordLengthPicker.TabIndex = 2;
-            PasswordLengthPicker.Leave += PasswordLengthPicker_Leave;
+            PasswordLengthPicker.ValueChanged += PasswordLengthPicker_ValueChanged;
             // 
             // PinCheckbox
             // 
