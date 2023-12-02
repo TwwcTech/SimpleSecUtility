@@ -14,8 +14,6 @@ namespace SimpleSecUtility.Frontend
 
         private void GeneratorForm_Load(object sender, EventArgs e)
         {
-            AcceptButton = RequestButton;
-
             PassLengthLabel.Enabled = false;
             PinLengthLabel.Enabled = false;
             PasswordLengthPicker.Enabled = false;
@@ -58,6 +56,7 @@ namespace SimpleSecUtility.Frontend
             }
         }
 
+        // maybe update this so it reverts to the highest "25" when over and lowest "8" when under
         private void PasswordLengthPicker_Leave(object sender, EventArgs e)
         {
             if (PasswordLengthPicker.Value < 8 || PasswordLengthPicker.Value > 25)
@@ -67,6 +66,7 @@ namespace SimpleSecUtility.Frontend
             }
         }
 
+        // maybe update this so it reverts to the highest "6" when over and lowest "4" when under
         private void PinLengthPicker_Leave(object sender, EventArgs e)
         {
             if (PinLengthPicker.Value < 4 || PinLengthPicker.Value > 6)
